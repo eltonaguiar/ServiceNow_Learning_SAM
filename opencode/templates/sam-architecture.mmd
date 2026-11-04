@@ -1,0 +1,70 @@
+# SAM Architecture — Mermaid Diagrams
+
+## Asset Lifecycle Flow
+
+```mermaid
+graph TD
+    A[Request Asset] --> B[Procure/Order]
+    B --> C[Receive]
+    C --> D[Setup & Tag]
+    D --> E[Assign to Employee]
+    E --> F[Use & Maintain]
+    F --> G{Needs Repair?}
+    G -->|Yes| H[In Repair]
+    H --> I[Return to Service]
+    I --> E
+    G -->|No| J{Replace?}
+    J -->|Yes| K[Retire]
+    J -->|No| E
+    K --> L[Dispose/Recycle]
+    style A fill:#e1f5fe
+    style L fill:#ffcdd2
+    style G fill:#fff9c4
+    style J fill:#fff9c4
+```
+
+## SAM Data Model
+
+```mermaid
+graph TD
+    A[Asset] --> B[Category]
+    A --> C[Vendor]
+    A --> D[Assigned To - User]
+    A --> E[Location]
+    A --> F[Contract]
+    A --> G[Asset Model]
+    B --> H[Asset States]
+    I[Software License] --> J[Installation]
+    J --> K[Computer Asset]
+    F --> M[Contract Renewal Date]
+    style A fill:#e1f5fe
+    style I fill:#c8e6c9
+    style F fill:#ffccbc
+```
+
+## Common Mistakes Flow
+
+```mermaid
+graph TD
+    A[Buy asset without record] --> B[Can't track it]
+    B --> C[Asset "disappears"]
+    D[Don't track license] --> E[Overpay for software]
+    F[No offboarding process] --> G[Assets leave with employees]
+    H[Ignore expiration dates] --> I[Support lapses unexpectedly]
+    style A fill:#ffcdd2
+    style C fill:#ffcdd2
+    style E fill:#ffcdd2
+    style G fill:#ffcdd2
+    style I fill:#ffcdd2
+```
+
+## How to Use These Diagrams
+
+1. Copy any `graph TD` block above
+2. Paste into a Mermaid-compatible viewer:
+   - GitHub Markdown (renders automatically)
+   - Notion (`/mermaid` block)
+   - Obsidian (Mermaid plugin)
+   - Draw.io / diagrams.net
+   - Excalidraw
+3. Export as PNG/SVG for presentations or documentation
