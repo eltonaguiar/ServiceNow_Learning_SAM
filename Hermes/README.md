@@ -209,7 +209,18 @@ System Definition > Guided Setup > SAM
 | Folder | Contents |
 |--------|----------|
 | `opencode/guides/` | ELI5 basics, guided setup, concept summaries |
-| `opencode/resources/` | Field cheat sheet, module framework, mandatory vs critical fields |
+| `opencode/resources/` | Field cheat sheet, module framework, mandatory vs critical |
 | `opencode/labs/` | Asset lifecycle hands-on lab |
 | `opencode/scripts/` | SAM concept summarizer script |
 | `opencode/templates/` | SAM architecture diagram template |
+| `Hermes/` | Hermes Agent resources (this folder) |
+
+## Infographics (Visual References)
+
+| Infographic | File | Description |
+|-------------|------|-------------|
+| SAM Asset Lifecycle | `Hermes/sam-asset-lifecycle.svg` | Request → Procure → Receive → Deploy → Maintain → Retire |
+| SAM Module Architecture | `Hermes/sam-module-architecture.svg` | Core tables, relationships, integration points |
+| SAM Field Classification | `Hermes/sam-field-classification.svg` | Critical vs. Mandatory vs. Optional fields |
+
+All infographics are SVG — open in any browser or import into documentation.

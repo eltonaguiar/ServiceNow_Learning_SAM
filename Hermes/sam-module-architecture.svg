@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- ServiceNow SAM Module Architecture Infographic -->
+  <!-- Author: Hermes Agent | Date: 2026-11-04 -->
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8fafc"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="40" width="1120" height="70" rx="10" fill="#0066cc"/>
+  <text x="60" y="82" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="white">ServiceNow SAM — Module Architecture</text>
+  <text x="60" y="104" font-family="Arial, sans-serif" font-size="14" fill="#e0e0e0">Tables, Relationships, and Integration Points</text>
+
+  <!-- Central Hub -->
+  <circle cx="600" cy="280" r="60" fill="#0066cc"/>
+  <text x="600" y="285" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">SAM</text>
+  <text x="600" y="305" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Service Asset</text>
+  <text x="600" y="318" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Management</text>
+
+  <!-- Table Nodes (around center) -->
+  <g>
+    <!-- alm_asset -->
+    <rect x="100" y="420" width="170" height="110" rx="8" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+    <text x="185" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc" text-anchor="middle">alm_asset</text>
+    <text x="185" y="472" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">Core asset</text>
+    <text x="185" y="486" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">record</text>
+    <text x="185" y="502" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">number, category,</text>
+    <text x="185" y="514" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">state, asset_tag</text>
+    <line x1="220" y1="330" x2="185" y2="410" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- alm_vendor -->
+    <rect x="320" y="420" width="170" height="110" rx="8" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+    <text x="405" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc" text-anchor="middle">alm_vendor</text>
+    <text x="405" y="472" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">Suppliers /</text>
+    <text x="405" y="486" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">vendors</text>
+    <text x="405" y="502" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">name, contact,</text>
+    <text x="405" y="514" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">email</text>
+    <line x1="405" y1="330" x2="405" y2="410" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- alm_contract -->
+    <rect x="540" y="420" width="170" height="110" rx="8" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+    <text x="625" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc" text-anchor="middle">alm_contract</text>
+    <text x="625" y="472" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">Warranties &amp;</text>
+    <text x="625" y="486" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">support</text>
+    <text x="625" y="502" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">start_date, end</text>
+    <text x="625" y="514" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">date, renewal</text>
+    <line x1="625" y1="330" x2="625" y2="410" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- alm_hardware -->
+    <rect x="760" y="420" width="170" height="110" rx="8" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+    <text x="845" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc" text-anchor="middle">alm_hardware</text>
+    <text x="845" y="472" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">Serial, MAC,</text>
+    <text x="845" y="486" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">warranty</text>
+    <text x="845" y="502" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">expiration</text>
+    <line x1="845" y1="330" x2="845" y2="410" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- alm_software -->
+    <rect x="970" y="420" width="170" height="110" rx="8" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+    <text x="1055" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc" text-anchor="middle">alm_software</text>
+    <text x="1055" y="472" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">Licenses &amp;</text>
+    <text x="1055" y="486" font-family="Arial, sans-serif" font-size="11" fill="#333" text-anchor="middle">installs</text>
+    <text x="1055" y="502" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">license_count,</text>
+    <text x="1055" y="514" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">installation_count</text>
+    <line x1="980" y1="330" x2="1055" y2="410" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Integration Points Panel (bottom) -->
+  <rect x="40" y="580" width="1120" height="150" rx="10" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+  <text x="60" y="610" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0066cc">Integration Points</text>
+  
+  <g>
+    <rect x="60" y="630" width="200" height="70" rx="6" fill="#e3f2fd" stroke="#0066cc"/>
+    <text x="80" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0066cc">Discovery</text>
+    <text x="80" y="668" font-family="Arial, sans-serif" font-size="11" fill="#333">MID Server finds</text>
+    <text x="80" y="684" font-family="Arial, sans-serif" font-size="11" fill="#333">servers &amp; devices</text>
+    
+    <rect x="280" y="630" width="200" height="70" rx="6" fill="#e3f2fd" stroke="#0066cc"/>
+    <text x="300" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0066cc">Procurement</text>
+    <text x="300" y="668" font-family="Arial, sans-serif" font-size="11" fill="#333">PO → Asset record</text>
+    
+    <rect x="500" y="630" width="200" height="70" rx="6" fill="#e3f2fd" stroke="#0066cc"/>
+    <text x="520" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0066cc">CMDB</text>
+    <text x="520" y="668" font-family="Arial, sans-serif" font-size="11" fill="#333">Link assets to</text>
+    <text x="520" y="684" font-family="Arial, sans-serif" font-size="11" fill="#333">services</text>
+    
+    <rect x="720" y="630" width="200" height="70" rx="6" fill="#e3f2fd" stroke="#0066cc"/>
+    <text x="740" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0066cc">Contract Mgmt</text>
+    <text x="740" y="668" font-family="Arial, sans-serif" font-size="11" fill="#333">Warranty &amp; support</text>
+    
+    <rect x="940" y="630" width="200" height="70" rx="6" fill="#e3f2fd" stroke="#0066cc"/>
+    <text x="960" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0066cc">Mobile</text>
+    <text x="960" y="668" font-family="Arial, sans-serif" font-size="11" fill="#333">Scan asset tags</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="750" width="1120" height="30" rx="5" fill="#e3f2fd"/>
+  <text x="60" y="770" font-family="Arial, sans-serif" font-size="12" fill="#0066cc">Hermes Agent | ServiceNow_Learning_SAM | 2026-11-04</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc"/>
+    </marker>
+  </defs>
+</svg>
