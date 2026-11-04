@@ -88,6 +88,7 @@ Full detail, field matrix and the ten expensive mistakes:
 
 ## Prerequisites that actually block you
 
+- [ ] **Foundation data loaded**: company, locations (with time zones), departments, cost centres, users, groups — SAM's spend dimensions are these fields, and empty dimensions make the compliance report unreadable ([guide](https://github.com/eltonaguiar/ServiceNow_Learning/blob/main/docs/09-foundation-data.md))
 - [ ] Entitlement **and** plugin (Foundation vs Professional decided)
 - [ ] Roles: asset manager, SAM admin, and a non-human **integration user**
 - [ ] One working discovery feed (SCCM / Intune / Jamf / Agent Client Collector / Service Graph)
