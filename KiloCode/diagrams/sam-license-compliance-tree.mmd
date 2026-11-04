@@ -1,0 +1,48 @@
+# ServiceNow License Compliance Decision Tree
+
+```mermaid
+flowchart TD
+    %% License Compliance Decision Tree
+    A[New Software License] --> B{License Type?}
+    
+    B -->|Per Device| C[Count Installations]
+    B -->|Per User| D[Count Users]
+    B -->|Per Core| E[Count Processor Cores]
+    B -->|Subscription| F[Check Expiration Date]
+    
+    C --> G{Used <= Entitled?}
+    D --> G
+    E --> G
+    F --> G
+    
+    G -->|Yes| H[Compliant - Green]
+    G -->|No| I{Over by how much?}
+    
+    I -->|Minor (<10%)| J[Warning - Monitor]
+    I -->|Major (>10%)| K[Critical - Purchase More]
+    
+    J --> L[Schedule Review]
+    K --> M[Purchase Additional Licenses]
+    M --> N[Update Entitlement Count]
+    N --> G
+    
+    L --> O[Schedule Audit]
+    O --> G
+    
+    style A fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    style G fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style H fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style I fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    style J fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    style K fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    style L fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    style M fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style N fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style O fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+```

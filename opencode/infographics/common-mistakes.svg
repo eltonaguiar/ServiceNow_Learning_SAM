@@ -1,0 +1,53 @@
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .card { fill: #ffcdd2; stroke: #b71c1c; stroke-width: 2; rx: 8; ry: 8; }
+      .card-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #b71c1c; }
+      .card-text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .fix { font-family: Arial, sans-serif; font-size: 11px; fill: #2e7d32; font-style: italic; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #b71c1c; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .line { stroke: #999; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <text x="400" y="30" text-anchor="middle" class="title">SAM — Common Mistakes &amp; Fixes</text>
+
+  <!-- Mistake 1 -->
+  <rect x="50" y="70" width="340" height="100" class="card" />
+  <text x="70" y="95" class="card-title">1. Buying before creating asset record</text>
+  <text x="70" y="115" class="card-text">Procurement and asset teams don't coordinate.</text>
+  <text x="70" y="132" class="fix">Fix: Create asset request BEFORE placing PO.</text>
+
+  <!-- Mistake 2 -->
+  <rect x="410" y="70" width="340" height="100" class="card" />
+  <text x="430" y="95" class="card-title">2. Not tracking software licenses</text>
+  <text x="430" y="115" class="card-text">Licenses invisible until audit reveals over/under-use.</text>
+  <text x="430" y="132" class="fix">Fix: Run license reconciliation quarterly.</text>
+
+  <!-- Mistake 3 -->
+  <rect x="50" y="190" width="340" height="100" class="card" />
+  <text x="70" y="215" class="card-title">3. Assets "disappear" after employee leaves</text>
+  <text x="70" y="232" class="card-text">No offboarding process to recover equipment.</text>
+  <text x="70" y="249" class="fix">Fix: Add asset recovery to HR offboarding.</text>
+
+  <!-- Mistake 4 -->
+  <rect x="410" y="190" width="340" height="100" class="card" />
+  <text x="430" y="215" class="card-title">4. Keeping expired contracts</text>
+  <text x="430" y="232" class="card-text">No one tracks renewal or expiration dates.</text>
+  <text x="430" y="249" class="fix">Fix: Set contract expiration alerts.</text>
+
+  <!-- Mistake 5 -->
+  <rect x="50" y="310" width="340" height="100" class="card" />
+  <text x="70" y="335" class="card-title">5. No asset tag on physical device</text>
+  <text x="70" y="352" class="card-text">Can't match physical laptop to ServiceNow record.</text>
+  <text x="70" y="369" class="fix">Fix: Tag device first, then create record.</text>
+
+  <!-- Mistake 6 -->
+  <rect x="410" y="310" width="340" height="100" class="card" />
+  <text x="430" y="335" class="card-title">6. Forgetting to retire old assets</text>
+  <text x="430" y="352" class="card-text">Reports show assets you no longer own.</text>
+  <text x="430" y="369" class="fix">Fix: Retire assets when replaced.</text>
+
+  <text x="400" y="660" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>

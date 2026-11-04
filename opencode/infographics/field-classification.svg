@@ -1,0 +1,91 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 8; ry: 8; }
+      .box-critical { fill: #ffcdd2; stroke: #b71c1c; stroke-width: 2; rx: 8; ry: 8; }
+      .box-mandatory { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; rx: 8; ry: 8; }
+      .box-optional { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 8; ry: 8; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1565c0; }
+      .field-name { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .field-type { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .field-why { font-family: Arial, sans-serif; font-size: 11px; fill: #888; font-style: italic; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+    </style>
+  </defs>
+
+  <text x="400" y="30" text-anchor="middle" class="title">SAM Fields — Mandatory vs Critical vs Optional</text>
+
+  <!-- Critical column -->
+  <text x="150" y="70" text-anchor="middle" class="field-name">CRITICAL</text>
+  <text x="150" y="90" text-anchor="middle" class="label">System won't work without</text>
+
+  <rect x="60" y="110" width="180" height="55" class="box-critical" />
+  <text x="150" y="130" class="field-name">Asset Tag</text>
+  <text x="150" y="145" class="field-type">Unique physical identifier</text>
+  <text x="150" y="158" class="field-why">Can't track asset without it</text>
+
+  <rect x="60" y="180" width="180" height="55" class="box-critical" />
+  <text x="150" y="200" class="field-name">Category</text>
+  <text x="150" y="215" class="field-type">Determines form fields</text>
+  <text x="150" y="228" class="field-why">Drives which fields appear</text>
+
+  <rect x="60" y="250" width="180" height="55" class="box-critical" />
+  <text x="150" y="270" class="field-name">State</text>
+  <text x="150" y="285" class="field-type">Lifecycle position</text>
+  <text x="150" y="298" class="field-why">Tracks where asset is</text>
+
+  <rect x="60" y="320" width="180" height="55" class="box-critical" />
+  <text x="150" y="340" class="field-name">Serial Number</text>
+  <text x="150" y="355" class="field-type">From hardware</text>
+  <text x="150" y="368" class="field-why">Links to warranty</text>
+
+  <!-- Mandatory column -->
+  <text x="400" y="70" text-anchor="middle" class="field-name">MANDATORY</text>
+  <text x="400" y="90" text-anchor="middle" class="label">Required for daily work</text>
+
+  <rect x="310" y="110" width="180" height="55" class="box-mandatory" />
+  <text x="400" y="130" class="field-name">Name</text>
+  <text x="400" y="145" class="field-type">Human-readable identifier</text>
+  <text x="400" y="158" class="field-why">Identifies the asset</text>
+
+  <rect x="310" y="180" width="180" height="55" class="box-mandatory" />
+  <text x="400" y="200" class="field-name">Purchase Date</text>
+  <text x="400" y="215" class="field-type">Date acquired</text>
+  <text x="400" y="228" class="field-why">Warranty &amp; depreciation</text>
+
+  <rect x="310" y="250" width="180" height="55" class="box-mandatory" />
+  <text x="400" y="270" class="field-name">Assigned To</text>
+  <text x="400" y="285" class="field-type">Employee reference</text>
+  <text x="400" y="298" class="field-why">Accountability</text>
+
+  <rect x="310" y="320" width="180" height="55" class="box-mandatory" />
+  <text x="400" y="340" class="field-name">Vendor</text>
+  <text x="400" y="355" class="field-type">Supplier</text>
+  <text x="400" y="368" class="field-why">Support contact</text>
+
+  <!-- Optional column -->
+  <text x="650" y="70" text-anchor="middle" class="field-name">OPTIONAL</text>
+  <text x="650" y="90" text-anchor="middle" class="label">Nice to have</text>
+
+  <rect x="560" y="110" width="180" height="55" class="box-optional" />
+  <text x="650" y="130" class="field-name">Cost</text>
+  <text x="650" y="145" class="field-type">Currency</text>
+  <text x="650" y="158" class="field-why">Budgeting only</text>
+
+  <rect x="560" y="180" width="180" height="55" class="box-optional" />
+  <text x="650" y="200" class="field-name">Location</text>
+  <text x="650" y="215" class="field-type">Office/site</text>
+  <text x="650" y="228" class="field-why">Physical whereabouts</text>
+
+  <rect x="560" y="250" width="180" height="55" class="box-optional" />
+  <text x="650" y="270" class="field-name">Pool</text>
+  <text x="650" y="285" class="field-type">Asset group</text>
+  <text x="650" y="298" class="field-why">Grouping similar assets</text>
+
+  <rect x="560" y="320" width="180" height="55" class="box-optional" />
+  <text x="650" y="340" class="field-name">MAC Address</text>
+  <text x="650" y="355" class="field-type">Network ID</text>
+  <text x="650" y="368" class="field-why">Network identification</text>
+
+  <text x="400" y="570" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>

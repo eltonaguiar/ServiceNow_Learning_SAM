@@ -1,0 +1,38 @@
+# ServiceNow SAM License Compliance Diagram
+
+```mermaid
+flowchart TD
+    %% License Compliance Workflow
+    subgraph "SAM License Compliance"
+        A[Create Software License] --> B[Allocate License]
+        B --> C[Track Usage]
+        C --> D{Compliance Check}
+        
+        D -->|Compliant| E[Green - OK]
+        D -->|Under-licensed| F[Red - Buy More]
+        D -->|Over-licensed| G[Yellow - Reclaim]
+        
+        F --> H[Purchase Additional Licenses]
+        G --> I[Reclaim Unused Licenses]
+        
+        H --> B
+        I --> B
+        
+        E --> J[Generate Compliance Report]
+        F --> J
+        G --> J
+    end
+
+    style E fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style F fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    style G fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    
+    style A fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style B fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style C fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    
+    style H fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style I fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style J fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+```

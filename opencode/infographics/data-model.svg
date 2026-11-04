@@ -1,0 +1,79 @@
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .table { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 6; ry: 6; }
+      .table-header { fill: #1565c0; rx: 6; ry: 0; }
+      .header-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: white; }
+      .field { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .field-critical { font-weight: bold; fill: #b71c1c; }
+      .field-mandatory { font-weight: bold; fill: #f57f17; }
+      .field-optional { fill: #666; }
+      .line { stroke: #999; stroke-width: 1; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1565c0; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+    </style>
+  </defs>
+
+  <text x="400" y="30" text-anchor="middle" class="title">ServiceNow SAM — Core Data Model</text>
+
+  <!-- alm_asset table -->
+  <rect x="50" y="70" width="220" height="200" class="table" />
+  <rect x="50" y="70" width="220" height="25" class="table-header" />
+  <text x="60" y="88" class="header-text">alm_asset</text>
+  <text x="60" y="105" class="field field-critical">• number (Critical)</text>
+  <text x="60" y="122" class="field field-critical">• category (Critical)</text>
+  <text x="60" y="139" class="field field-critical">• state (Critical)</text>
+  <text x="60" y="156" class="field field-critical">• asset_tag (Critical)</text>
+  <text x="60" y="173" class="field field-mandatory">• name (Mandatory)</text>
+  <text x="60" y="190" class="field field-mandatory">• purchase_date (Mandatory)</text>
+  <text x="60" y="207" class="field field-mandatory">• assigned_to (Mandatory)</text>
+  <text x="60" y="224" class="field field-optional">• cost (Optional)</text>
+  <text x="60" y="241" class="field field-optional">• serial_number (Optional)</text>
+
+  <!-- alm_vendor table -->
+  <rect x="550" y="70" width="200" height="120" class="table" />
+  <rect x="550" y="70" width="200" height="25" class="table-header" />
+  <text x="560" y="88" class="header-text">alm_vendor</text>
+  <text x="560" y="105" class="field">• name</text>
+  <text x="560" y="122" class="field">• contact_email</text>
+  <text x="560" y="139" class="field">• phone</text>
+  <text x="560" y="156" class="field">• address</text>
+
+  <!-- alm_contract table -->
+  <rect x="550" y="230" width="200" height="120" class="table" />
+  <rect x="550" y="230" width="200" height="25" class="table-header" />
+  <text x="560" y="248" class="header-text">alm_contract</text>
+  <text x="560" y="265" class="field">• name</text>
+  <text x="560" y="282" class="field">• start_date</text>
+  <text x="560" y="302" class="field">• end_date</text>
+  <text x="560" y="319" class="field">• renewal_date</text>
+
+  <!-- alm_asset_category table -->
+  <rect x="300" y="340" width="200" height="100" class="table" />
+  <rect x="300" y="340" width="200" height="25" class="table-header" />
+  <text x="310" y="358" class="header-text">alm_asset_category</text>
+  <text x="310" y="375" class="field">• name</text>
+  <text x="310" y="392" class="field">• parent</text>
+  <text x="310" y="409" class="field">• active</text>
+
+  <!-- Relationships -->
+  <line x1="270" y1="120" x2="550" y2="130" class="line" />
+  <text x="400" y="125" text-anchor="middle" class="label">many-to-1</text>
+
+  <line x1="270" y1="210" x2="550" y2="290" class="line" />
+  <text x="400" y="285" text-anchor="middle" class="label">many-to-1</text>
+
+  <line x1="160" y1="270" x2="400" y2="340" class="line" />
+  <text x="260" y="335" text-anchor="middle" class="label">many-to-1</text>
+
+  <!-- Legend -->
+  <text x="50" y="480" class="label">Field Types:</text>
+  <rect x="50" y="490" width="15" height="15" fill="#b71c1c" />
+  <text x="70" y="502" class="label">Critical</text>
+  <rect x="150" y="490" width="15" height="15" fill="#f57f17" />
+  <text x="170" y="502" class="label">Mandatory</text>
+  <rect x="250" y="490" width="15" height="15" fill="#666" />
+  <text x="270" y="502" class="label">Optional</text>
+
+  <text x="400" y="670" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>

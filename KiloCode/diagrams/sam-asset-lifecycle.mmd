@@ -1,0 +1,27 @@
+# ServiceNow SAM Asset Lifecycle Diagram
+
+```mermaid
+flowchart LR
+    %% Asset Lifecycle
+    subgraph "ServiceNow SAM Asset Lifecycle"
+        A[Request Asset] --> B[Procure Asset]
+        B --> C[Receive Asset]
+        C --> D[Deploy Asset]
+        D --> E[Maintain Asset]
+        E --> F[Retire Asset]
+        
+        E --> G[Transfer/Reassign]
+        G --> D
+        
+        F --> H[Dispose/Recycle]
+    end
+
+    style A fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style B fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style D fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style E fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style F fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style H fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+```
