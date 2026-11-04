@@ -58,6 +58,9 @@ ServiceNow SAM is like a giant inventory system for everything your company owns
 Without SAM, companies lose track of what they own, pay for licenses they don't use, and get surprised when assets break or expire.
 
 **The asset lifecycle:**
+
+![SAM Asset Lifecycle](sam-asset-lifecycle.svg)
+
 ```
 Request → Procure → Receive → Deploy → Maintain → Retire
 ```
@@ -84,6 +87,9 @@ Request → Procure → Receive → Deploy → Maintain → Retire
 ## SAM Module Framework
 
 **Core relationships:**
+
+![SAM Module Architecture](sam-module-architecture.svg)
+
 ```
 Asset → Category (many-to-one)
 Asset → Vendor (many-to-one)
@@ -105,6 +111,8 @@ Software Installation → License (many-to-one)
 
 <a name="field-cheat-sheet"></a>
 ## SAM Field Cheat Sheet (Critical / Mandatory / Optional)
+
+![SAM Field Classification](sam-field-classification.svg)
 
 ### Critical (System Won't Work Without)
 - **Number** — Auto-generated, unique identifier
@@ -217,10 +225,12 @@ System Definition > Guided Setup > SAM
 
 ## Infographics (Visual References)
 
-| Infographic | File | Description |
-|-------------|------|-------------|
-| SAM Asset Lifecycle | `Hermes/sam-asset-lifecycle.svg` | Request → Procure → Receive → Deploy → Maintain → Retire |
-| SAM Module Architecture | `Hermes/sam-module-architecture.svg` | Core tables, relationships, integration points |
-| SAM Field Classification | `Hermes/sam-field-classification.svg` | Critical vs. Mandatory vs. Optional fields |
+Click an image to view it full-size:
 
-All infographics are SVG — open in any browser or import into documentation.
+| Infographic | Preview | Description |
+|-------------|---------|-------------|
+| SAM Asset Lifecycle | ![SAM Asset Lifecycle](sam-asset-lifecycle.svg) | Request → Procure → Receive → Deploy → Maintain → Retire |
+| SAM Module Architecture | ![SAM Module Architecture](sam-module-architecture.svg) | Core tables, relationships, integration points |
+| SAM Field Classification | ![SAM Field Classification](sam-field-classification.svg) | Critical vs. Mandatory vs. Optional fields |
+
+All infographics are SVG — open directly in any browser or import into documentation.
