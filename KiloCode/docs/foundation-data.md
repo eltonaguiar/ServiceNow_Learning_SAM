@@ -1,0 +1,153 @@
+# ServiceNow SAM - Foundation Data Verification Script
+
+**Agent:** Kilo  
+**Date:** 2026-11-04  
+**Purpose:** Verify Foundation Data completeness before loading assets/licenses  
+
+---
+
+## Script: Foundation Data Health Check
+
+Run this in **System Definition → Scripts - Background** (or via any script include runner).
+
+```javascript
+/**
+ * SAM Foundation Data Health Check
+ * Verifies that foundational data exists and is complete before
+ * loading assets, licenses, or running compliance reports.
+ */
+
+var foundationAudit = {
+    results: [],
+    
+    addResult: function(table, sysId, field, message) {
+        this.results.push({
+            table: table,
+            sys_id: sysId || 'N/A',
+            field: field || 'N/A',
+            issue: message
+        });
+    },
+    
+    report: function() {
+        gs.print('========================================');
+        gs.print('SERVICE NOW SAM - FOUNDATION DATA AUDIT');
+        gs.print('========================================');
+        gs.print('Total issues found: ' + this.results.length);
+        gs.print('');
+        
+        // Group by table
+        var byTable = {};
+        this.results.forEach(function(r) {
+            if (!byTable[r.table]) byTable[r.table] = [];
+            byTable[r.table].push(r);
+        });
+        
+        Object.keys(byTable).sort().forEach(function(table) {
+            gs.print('--- ' + table + ' (' + byTable[table].length + ' issues) ---');
+            byTable[table].forEach(function(r) {
+                gs.print('  - ' + r.sys_id + ' | ' + r.field + ' | ' + r.issue);
+            });
+            gs.print('');
+        });
+        
+        if (this.results.length === 0) {
+            gs.print('✓ All foundation data checks passed!');
+        } else {
+            gs.print('⚠ ' + this.results.length + ' issues found. Fix before loading assets/licenses.');
+        }
+    }
+};
+
+/**
+ * Check a table for empty required fields
+ */
+function checkTable(tableName, fields) {
+    var gr = new GlideRecord(tableName);
+    fields.forEach(function(field) {
+        gr.addNullQuery(field);
+    });
+    gr.query();
+    
+    while (gr.next()) {
+        foundationAudit.addResult(tableName, gr.getValue('sys_id'), fields.join(', '), 'Missing required field(s): ' + fields.join(', '));
+    }
+}
+
+/**
+ * Check for duplicate names in a table
+ */
+function checkDuplicates(tableName, fieldName) {
+    var gr = new GlideRecord(tableName);
+    gr.groupBy(fieldName);
+    gr.addHaving(fieldName, '>', 1);
+    gr.query();
+    
+    while (gr.next()) {
+        foundationAudit.addResult(tableName, gr.getValue('sys_id'), fieldName, 'Duplicate value: ' + gr.getValue(fieldName));
+    }
+}
+
+// === RUN CHECKS ===
+
+// 1. Company / Legal Entity
+checkTable('core_company', ['name']);
+checkDuplicates('core_company', 'name');
+
+// 2. Cost Center
+checkTable('cmn_cost_center', ['name']);
+checkDuplicates('cmn_cost_center', ['name']);
+
+// 3. Department
+checkTable('cmn_department', ['name']);
+checkDuplicates('cmn_department', ['name']);
+
+// 4. Location
+checkTable('cmn_location', ['name', 'street', 'city', 'country']);
+checkDuplicates('cmn_location', 'name');
+
+// 5. Model Category
+checkTable('cmdb_model_category', ['name']);
+checkDuplicates('cmdb_model_category', 'name');
+
+// 6. Manufacturer
+checkTable('cmdb_model_company', ['name']);
+checkDuplicates('cmdb_model_company', 'name');
+
+// 7. Model
+checkTable('cmdb_model', ['name', 'model_category', 'manufacturer']);
+checkDuplicates('cmdb_model', 'name');
+
+// Report results
+foundationAudit.report();
+```
+
+---
+
+## How to Interpret Results
+
+| Result | Meaning | Action |
+|--------|---------|--------|
+| 0 issues | Foundation data is clean | Proceed to load assets and licenses |
+| Missing `name` | Record has no name | Delete or rename; cannot use in reports |
+| Missing `street`/`city`/`country` | Location incomplete | Fill in address fields; location reports will be wrong |
+| Missing `model_category` | Model not categorized | Assign to correct category; category reports will be incomplete |
+| Missing `manufacturer` | Model has no manufacturer | Link to manufacturer record; vendor management breaks |
+| Duplicate `name` | Two records with same name | Merge or deactivate one; reporting will be split |
+
+---
+
+## Remediation Priority
+
+| Priority | Issue | Why |
+|----------|-------|-----|
+| 1 (Critical) | Duplicate model names | Causes double-counting in license compliance |
+| 2 (Critical) | Missing `model_category` | Category reports incomplete; can't group assets |
+| 3 (High) | Missing `manufacturer` | Vendor management and warranty tracking broken |
+| 4 (Medium) | Missing `location` | Asset location reports incomplete |
+| 5 (Medium) | Missing `cost_center` | Chargeback/showback reports incomplete |
+| 6 (Low) | Formatting inconsistencies | Cosmetic; clean up after critical issues |
+
+---
+
+*Generated by Kilo on 2026-11-04. Part of the ServiceNow_Learning_SAM repository at github.com/eltonaguiar/ServiceNow_Learning_SAM.*
