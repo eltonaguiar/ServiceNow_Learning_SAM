@@ -1,34 +1,62 @@
-# KiloCode — ServiceNow SAM Learning Materials
+# KiloCodev2 — ServiceNow SAM Learning Materials (Infographics & Visual Guide)
 
 **Agent:** Kilo  
 **Date:** 2026-11-04  
 **Repository:** https://github.com/eltonaguiar/ServiceNow_Learning_SAM  
-**Branch:** kilo-2026-11-04-sam-learning-materials  
+**Branch:** kilocodev2  
 
 ---
 
-## Visual Diagrams
+## Visual Infographics & Diagrams
+
+This guide is heavily focused on **visual learning** with infographics, diagrams, and flowcharts to help you master ServiceNow Software Asset Management (SAM) rapidly.
+
+### Core Architecture & Relationships
 
 <p align="center">
-  <img src="KiloCode/diagrams/sam-module-relationships.svg" alt="ServiceNow SAM Module Relationships" width="600"/>
-</div>
-<div align="center">
-  <img src="KiloCode/diagrams/sam-architecture.mmd" alt="ServiceNow SAM Architecture" width="600"/>
-</div>
-<div align="center">
-  <img src="KiloCode/diagrams/sam-license-compliance.mmd" alt="SAM License Compliance Flow" width="600"/>
-</div>
-<div align="center">
-  <img src="KiloCode/diagrams/learning-loop.mmd" alt="ServiceNow SAM 5-Step Learning Loop" width="600"/>
-</div>
+  <img src="diagrams/sam-module-relationships.svg" alt="ServiceNow SAM Module Relationships" width="900"/>
+</p>
+
+*Shows how SAM modules connect: Software Asset Management, Hardware Asset Management, Software Models, Entitlements, Reconciliation, and more.*
+
+<p align="center">
+  <img src="diagrams/sam-architecture.mmd" alt="ServiceNow SAM Architecture" width="900"/>
+</p>
+
+*End-to-end SAM architecture showing data sources, normalization, reconciliation, and compliance reporting.*
+
+### Learning & Compliance Workflows
+
+<p align="center">
+  <img src="diagrams/sam-license-compliance.mmd" alt="SAM License Compliance Flow" width="900"/>
+</p>
+
+*License compliance workflow from discovery through reconciliation to remediation.*
+
+<p align="center">
+  <img src="diagrams/learning-loop.mmd" alt="ServiceNow SAM 5-Step Learning Loop" width="900"/>
+</p>
+
+*Our proven 5-step rapid learning methodology applied to SAM.*
+
+---
+
+## Infographic Quick Reference
+
+| Infographic | Purpose | Use Case |
+|-------------|---------|----------|
+| **SAM Module Relationships** | Visual map of all SAM components and how they connect | Understand the big picture before diving into modules |
+| **SAM Architecture** | End-to-end data flow from discovery to compliance | Learn how data flows through the SAM ecosystem |
+| **License Compliance Flow** | Step-by-step compliance process with decision points | Master reconciliation and remediation workflows |
+| **Learning Loop** | 5-step methodology with time targets | Follow a repeatable learning approach for any SAM topic |
 
 ---
 
 ## Purpose
 
-This directory contains learning materials for **ServiceNow SAM (Software Asset Management)** — designed to help beginners and intermediate learners understand SAM concepts, modules, workflows, integrations, and hands-on labs.
+This directory contains **image-rich learning materials** for **ServiceNow SAM (Software Asset Management)** designed for visual learners. Materials cover SAM concepts, modules, workflows, integrations, Success Packs, and hands-on labs with clear diagrams.
 
-All materials are structured around the same 5-step rapid learning loop used across the ServiceNow_Learning project family.
+All materials follow the proven 5-step rapid learning loop optimized for SAM.
 
 ---
 
@@ -36,71 +64,117 @@ All materials are structured around the same 5-step rapid learning loop used acr
 
 ```
 KiloCode/
-├── README.md                              # This file
-├── methodology/rapid-learning-methodology.md   # Core 5-step learning loop
-├── modules/servicenow-sam-module-framework.md   # How to learn SAM modules
-├── concepts/servicenow-sam-concepts-eli5.md     # ELI5 SAM concepts glossary
-├── success-packs/sam-success-pack-prerequisites.md # SAM Success Pack pre-requisites
-├── navigation/sam-breadcrumbs-cheatsheet.md     # SAM navigation cheatsheet
-├── common-mistakes/sam-mistakes-to-avoid.md     # Common SAM mistakes & fixes
-├── fields/sam-mandatory-vs-critical-fields.md   # Mandatory vs Critical vs Optional SAM fields
-├── out-of-box/sam-out-of-box-workflows-integrations.md # OOB SAM workflows, integrations, metrics
-├── labs/rest-message-integration/               # Lab: REST Message integration for SAM
-│   └── README.md
-├── labs/remote-table/                           # Lab: Remote Table for SAM data
-│   └── README.md
+├── README.md                              # This file (Infographics-focused)
+├── diagrams/                              # All infographics and diagrams
+│   ├── sam-module-relationships.svg       # Module relationships
+│   ├── sam-architecture.mmd               # Architecture diagram
+│   ├── sam-license-compliance.mmd         # Compliance flow
+│   └── learning-loop.mmd                  # Learning methodology
+├── methodology/
+│   └── rapid-learning-methodology.md      # Core 5-step learning loop
+├── modules/
+│   └── servicenow-sam-module-framework.md # SAM module learning framework
+├── concepts/
+│   └── servicenow-sam-concepts-eli5.md    # ELI5 SAM glossary with visuals
+├── success-packs/
+│   └── sam-success-pack-prerequisites.md  # SAM Success Pack guide
+├── navigation/
+│   └── sam-breadcrumbs-cheatsheet.md      # Visual navigation guide
+├── common-mistakes/
+│   └── sam-mistakes-to-avoid.md          # Pitfalls with visual cues
+├── fields/
+│   └── sam-mandatory-vs-critical-fields.md # Field importance matrix
+├── out-of-box/
+│   └── sam-out-of-box-workflows-integrations.md # OOB reference
+├── labs/
+│   ├── rest-message-integration/          # REST Message lab with diagrams
+│   └── remote-table/                      # Remote Table lab with diagrams
 ├── scripts/
-│   ├── rapid-learning-checklist.md              # Quick-start checklist
-│   ├── lab-setup-template.md                    # Lab setup template
-│   └── concept-summary-template.md              # Concept summary template
+│   ├── rapid-learning-checklist.md         # Visual checklist
+│   ├── lab-setup-template.md              # Lab template
+│   └── concept-summary-template.md        # Summary template
 └── meta/
-    ├── AGENT.md                                 # Who built this (Kilo) and when
-    └── CHANGELOG.md                             # Changelog
+    ├── AGENT.md                          # Agent info
+    └── CHANGELOG.md                      # Changelog
 ```
 
 ---
 
-## The 5-Step Rapid Learning Loop
+## Learning Path (Visual Journey)
 
-Every SAM module or concept follows the same 5-step loop:
+```mermaid
+graph LR
+    A[1. Orient] --> B[2. Configure]
+    B --> C[3. Build]
+    C --> D[4. Verify]
+    D --> E[5. Teach Back]
+    E --> A
+```
 
-| Step | Name | What You Do | Output |
-|------|------|-------------|--------|
-| 1 | **Orient** | Read the ELI5 glossary + breadcrumbs for the SAM module. Know where it lives in the UI. | Mental map of where things are |
-| 2 | **Configure** | Turn the module on (if needed). Set roles. Create a test record. | Working instance with module active |
-| 3 | **Build** | Do the lab: create an asset, run a reconciliation, create a PO, etc. | Tangible artifact (asset record, PO, contract) |
-| 4 | **Verify** | Confirm the artifact works end-to-end. Check related lists, logs, dashboards. | Evidence it works |
-| 5 | **Teach Back** | Write a 1-paragraph summary using `scripts/concept-summary-template.md`. | You can explain it simply |
-
-**Time target:** Complete Steps 1–5 in under 2 hours per module.
-
----
-
-## How to Use This Repo
-
-1. **New to ServiceNow SAM?** Start with `docs/concepts/servicenow-sam-concepts-eli5.md` (ELI5 glossary).
-2. **Learning a specific SAM module?** Go to `docs/modules/servicenow-sam-module-framework.md`, pick your module, follow the 5-step loop.
-3. **Building an integration?** Start at `labs/rest-message-integration/` or `labs/remote-table/`.
-4. **Need a quick reference?** Use `docs/navigation/sam-breadcrumbs-cheatsheet.md` and `scripts/rapid-learning-checklist.md`.
-5. **Stuck?** Check `docs/common-mistakes/sam-mistakes-to-avoid.md` first.
+**Recommended Flow:**
+1. **Start Here:** Review all infographics above to get the big picture
+2. **Learn Concepts:** Read `concepts/servicenow-sam-concepts-eli5.md` with visual references
+3. **Pick a Module:** Use `modules/servicenow-sam-module-framework.md` to plan your learning
+4. **Do Labs:** Practice with REST Message and Remote Table labs
+5. **Validate:** Use checklists and test against real scenarios
 
 ---
 
-## Core Principles
+## Key SAM Topics Covered
 
-1. **No configuration without a purpose.** Every field you touch must map to a business need (e.g., software license compliance, hardware asset tracking).
-2. **Evidence over memory.** If you can't show it in a screenshot or list view, you haven't learned it.
-3. **Break things safely.** Use a developer instance. Never practice on production.
-4. **Certifications are a side effect, not the goal.** CSA/CAD/SAM certifications come from doing, not memorizing.
-
----
-
-## Next Steps
-
-- **Beginner:** Read `docs/concepts/servicenow-sam-concepts-eli5.md`, then `docs/methodology/rapid-learning-methodology.md`.
-- **Intermediate:** Pick a SAM module from `docs/modules/servicenow-sam-module-framework.md` and run the 5-step loop.
-- **Advanced:** Build a custom lab combining REST Message + Remote Table + Flow Designer for SAM asset lifecycle management.
+| Topic | Coverage | Visual Aid |
+|-------|----------|------------|
+| **SAM Fundamentals** | Software models, entitlements, rights, installations, reconciliations | Module Relationships diagram |
+| **Hardware Asset Management** | Asset lifecycle, procurement, contracts, disposal | Architecture diagram |
+| **License Compliance** | True-up, compliance calculations, remediation | Compliance Flow diagram |
+| **Discovery & Normalization** | Software discovery, normalization rules, publishers | Architecture diagram |
+| **Workflows & Approvals** | OOB workflows, playbooks, approval routing | Compliance Flow diagram |
+| **Integrations** | REST Messages, Remote Tables, MID Server | Architecture diagram |
+| **Reporting & Dashboards** | Compliance dashboards, KPIs, metrics | All diagrams |
 
 ---
 
-*Generated by Kilo on 2026-11-04. Part of the ServiceNow_Learning_SAM repository at github.com/eltonaguiar/ServiceNow_Learning_SAM.*
+## Quick Start Guide
+
+### For Complete Beginners
+1. Look at **SAM Module Relationships** infographic first
+2. Read **SAM Concepts ELI5** 
+3. Follow the **Learning Loop** infographic for your first topic
+4. Do a simple lab to reinforce
+
+### For Intermediate Learners
+1. Focus on **License Compliance Flow** infographic
+2. Study **SAM Architecture** to understand data flow
+3. Practice with Success Pack prerequisites
+4. Build custom integrations
+
+### For Advanced Learners
+1. Master all diagrams and trace end-to-end flows
+2. Create custom labs combining multiple SAM components
+3. Optimize reconciliation rules and reports
+4. Build automated remediation workflows
+
+---
+
+## Tools & Resources
+
+- **Diagrams**: All visuals in `diagrams/` folder (SVG and Mermaid)
+- **Checklists**: Quick reference in `scripts/`
+- **Labs**: Hands-on practice in `labs/`
+- **Breadcrumbs**: Navigation shortcuts in `navigation/`
+
+---
+
+## Pro Tips for Visual Learners
+
+- **Print or pin** the infographics for quick reference
+- **Trace the flows** with your finger/eyes to understand connections
+- **Draw your own** - recreate diagrams from memory to test understanding
+- **Teach with visuals** - explain using the diagrams to reinforce learning
+- **Color code** - mentally group related components
+
+---
+
+*Generated by Kilo on 2026-11-04 | Branch: kilocodev2 | Part of ServiceNow_Learning_SAM repository*
+
+**Remember:** *A picture is worth a thousand ServiceNow forms. Learn visually, practice hands-on, teach back.*
