@@ -1,0 +1,85 @@
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 8; ry: 8; }
+      .box-critical { fill: #ffcdd2; stroke: #b71c1c; stroke-width: 2; rx: 8; ry: 8; }
+      .box-mandatory { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; rx: 8; ry: 8; }
+      .box-optional { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 8; ry: 8; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1565c0; }
+      .box-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1565c0; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .box-example { font-family: Arial, sans-serif; font-size: 11px; fill: #666; font-style: italic; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <text x="400" y="30" text-anchor="middle" class="title">SAM Foundation Data — Setup Order</text>
+
+  <!-- Level 1: Companies & Vendors -->
+  <rect x="50" y="70" width="220" height="80" class="box-critical" />
+  <text x="160" y="95" text-anchor="middle" class="box-title">Companies &amp; Vendors</text>
+  <text x="160" y="112" text-anchor="middle" class="box-desc">Dell, Microsoft, CDW</text>
+  <text x="160" y="128" text-anchor="middle" class="box-example">cmn_company, cmn_vendor</text>
+
+  <!-- Level 2: Locations -->
+  <rect x="290" y="70" width="220" height="80" class="box-critical" />
+  <text x="400" y="95" text-anchor="middle" class="box-title">Locations</text>
+  <text x="400" y="112" text-anchor="middle" class="box-desc">Offices, warehouses</text>
+  <text x="400" y="128" text-anchor="middle" class="box-example">cmn_location</text>
+
+  <!-- Level 3: Departments & Cost Centers -->
+  <rect x="530" y="70" width="220" height="80" class="box-mandatory" />
+  <text x="640" y="95" text-anchor="middle" class="box-title">Departments &amp; Cost Centers</text>
+  <text x="640" y="112" text-anchor="middle" class="box-desc">IT, Finance, HR</text>
+  <text x="640" y="128" text-anchor="middle" class="box-example">cmn_department, cmn_cost_center</text>
+
+  <!-- Level 4: Asset Categories & States -->
+  <rect x="50" y="190" width="220" height="80" class="box-critical" />
+  <text x="160" y="215" text-anchor="middle" class="box-title">Asset Categories</text>
+  <text x="160" y="232" text-anchor="middle" class="box-desc">Laptop, Server, Software</text>
+  <text x="160" y="248" text-anchor="middle" class="box-example">alm_asset_category</text>
+
+  <rect x="290" y="190" width="220" height="80" class="box-critical" />
+  <text x="400" y="215" text-anchor="middle" class="box-title">Asset States</text>
+  <text x="400" y="232" text-anchor="middle" class="box-desc">In Stock, Assigned, Retired</text>
+  <text x="400" y="248" text-anchor="middle" class="box-example">alm_asset_state</text>
+
+  <!-- Level 5: Asset Models -->
+  <rect x="530" y="190" width="220" height="80" class="box-optional" />
+  <text x="640" y="215" text-anchor="middle" class="box-title">Asset Models</text>
+  <text x="640" y="232" text-anchor="middle" class="box-desc">Dell XPS 13, MacBook Pro</text>
+  <text x="640" y="248" text-anchor="middle" class="box-example">alm_asset_model</text>
+
+  <!-- Level 6: Users -->
+  <rect x="300" y="310" width="200" height="80" class="box-mandatory" />
+  <text x="400" y="335" text-anchor="middle" class="box-title">Users</text>
+  <text x="400" y="352" text-anchor="middle" class="box-desc">Employees who get assets</text>
+  <text x="400" y="368" text-anchor="middle" class="box-example">sys_user</text>
+
+  <!-- Level 7: Asset Record (final) -->
+  <rect x="275" y="430" width="250" height="80" class="box-critical" />
+  <text x="400" y="455" text-anchor="middle" class="box-title">ASSET RECORD</text>
+  <text x="400" y="472" text-anchor="middle" class="box-desc">Created LAST</text>
+  <text x="400" y="489" text-anchor="middle" class="box-example">alm_asset</text>
+
+  <!-- Arrows showing dependency flow -->
+  <line x1="160" y1="150" x2="160" y2="190" class="arrow" />
+  <line x1="400" y1="150" x2="400" y2="190" class="arrow" />
+  <line x1="640" y1="150" x2="640" y2="190" class="arrow" />
+  <line x1="160" y1="270" x2="160" y2="310" class="arrow" />
+  <line x1="400" y1="270" x2="400" y2="310" class="arrow" />
+  <line x1="640" y1="270" x2="640" y2="310" class="arrow" />
+  <line x1="400" y1="390" x2="400" y2="430" class="arrow" />
+
+  <!-- Level labels -->
+  <text x="40" y="85" class="label">Level 1</text>
+  <text x="40" y="205" class="label">Level 2</text>
+  <text x="40" y="325" class="label">Level 3</text>
+  <text x="40" y="445" class="label">Level 4 (Final)</text>
+
+  <text x="400" y="650" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>

@@ -34,11 +34,12 @@ opencode/
 ## Quick Start
 
 1. **New to SAM?** Start with `guides/sam-eli5-basics.md`
-2. **Want to set up SAM?** Follow `guides/sam-guided-setup.md`
-3. **Want hands-on practice?** Complete `labs/sam-asset-lifecycle.md`
-4. **Need a field reference?** Check `resources/sam-field-cheatsheet.md`
-5. **Want to diagram SAM?** Use `templates/sam-architecture.mmd`
-6. **Want visual diagrams?** View `infographics/` (SVG images below)
+2. **Need foundation data?** Read `guides/sam-foundation-data.md` (must-do before assets)
+3. **Want to set up SAM?** Follow `guides/sam-guided-setup.md`
+4. **Want hands-on practice?** Complete `labs/sam-asset-lifecycle.md`
+5. **Need a field reference?** Check `resources/sam-field-cheatsheet.md`
+6. **Want to diagram SAM?** Use `templates/sam-architecture.mmd`
+7. **Want visual diagrams?** View `infographics/` (SVG images below)
 
 ## Key SAM Concepts
 
