@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500">
+  <defs>
+    <style>
+      .mistake { fill: #ffcdd2; stroke: #c62828; stroke-width: 2; rx: 8; }
+      text { font-family: Arial, sans-serif; font-size: 13px; text-anchor: middle; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  <rect class="mistake" x="50" y="40" width="220" height="40" />
+  <text x="160" y="65">Buy asset without record</text>
+  <line class="arrow" x1="270" y1="60" x2="320" y2="60" />
+  <rect class="mistake" x="320" y="40" width="160" height="40" />
+  <text x="400" y="65">Can't track it</text>
+  <line class="arrow" x1="480" y1="60" x2="530" y2="60" />
+  <rect class="mistake" x="530" y="40" width="150" height="40" />
+  <text x="605" y="65">Asset "disappears"</text>
+  <rect class="mistake" x="50" y="140" width="180" height="40" />
+  <text x="140" y="165">Don't track license</text>
+  <line class="arrow" x1="230" y1="160" x2="280" y2="160" />
+  <rect class="mistake" x="280" y="140" width="200" height="40" />
+  <text x="380" y="165">Overpay for software</text>
+  <rect class="mistake" x="50" y="240" width="220" height="40" />
+  <text x="160" y="265">No offboarding process</text>
+  <line class="arrow" x1="270" y1="260" x2="320" y2="260" />
+  <rect class="mistake" x="320" y="240" width="250" height="40" />
+  <text x="445" y="265">Assets leave with employees</text>
+  <rect class="mistake" x="50" y="340" width="200" height="40" />
+  <text x="150" y="365">Ignore expiration dates</text>
+  <line class="arrow" x1="250" y1="360" x2="300" y2="360" />
+  <rect class="mistake" x="300" y="340" width="250" height="40" />
+  <text x="425" y="365">Support lapses unexpectedly</text>
+</svg>
