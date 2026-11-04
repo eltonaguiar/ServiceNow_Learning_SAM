@@ -1,0 +1,64 @@
+# ServiceNow Courses — Mermaid Learning Path Diagram
+
+```mermaid
+graph TD
+    %% Phase 1: Platform Foundations
+    A[Start Here] --> B1[Course 1: ServiceNow Fundamentals]
+    B1 --> B2[Course 2: Platform Administration]
+    B2 --> B3[Course 3: UI Building & Service Portal]
+    B3 --> B4[Course 4: Flow Designer]
+    
+    %% Phase 2: SAM
+    B4 --> C1[Course 5: IT Asset Management Fundamentals]
+    C1 --> C2[Course 6: Software Asset Management]
+    C2 --> C3[Course 7: Contract Management]
+    
+    %% Phase 3: Advanced
+    C3 --> D1[Course 8: Integrations REST/SOAP/MID Server]
+    D1 --> D2[Course 9: ServiceNow Discovery]
+    D2 --> D3[Course 10: Service Mapping]
+    
+    %% Phase 4: Certification
+    D3 --> E1[CSA Certification]
+    E1 --> E2[CAD Certification]
+    E2 --> E3[ITAM Specialist Certification]
+    
+    %% Styling
+    classDef phase1 fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef phase2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef phase3 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+    classDef cert fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+    
+    class B1,B2,B3,B4 phase1;
+    class C1,C2,C3 phase2;
+    class D1,D2,D3 phase3;
+    class E1,E2,E3 cert;
+    
+    %% Annotations
+    linkStyle default stroke-width:2px,fill:none,stroke:#333;
+    
+    subgraph Phase1 [Phase 1: Platform Foundations (Weeks 1-3)]
+        B1
+        B2
+        B3
+        B4
+    end
+    
+    subgraph Phase2 [Phase 2: SAM (Weeks 4-6)]
+        C1
+        C2
+        C3
+    end
+    
+    subgraph Phase3 [Phase 3: Advanced (Weeks 7-10)]
+        D1
+        D2
+        D3
+    end
+    
+    subgraph Phase4 [Phase 4: Certification (Week 11+)]
+        E1
+        E2
+        E3
+    end
+```
