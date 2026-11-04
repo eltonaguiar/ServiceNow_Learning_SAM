@@ -28,6 +28,7 @@ opencode/
   labs/         # Hands-on labs (build something real)
   scripts/      # Automation scripts for SAM learning
   templates/    # Infographic and diagram templates
+  infographics/ # SVG images (asset lifecycle, data model, fields, mistakes, roles)
 ```
 
 ## Quick Start
@@ -37,6 +38,7 @@ opencode/
 3. **Want hands-on practice?** Complete `labs/sam-asset-lifecycle.md`
 4. **Need a field reference?** Check `resources/sam-field-cheatsheet.md`
 5. **Want to diagram SAM?** Use `templates/sam-architecture.mmd`
+6. **Want visual diagrams?** View `infographics/` (SVG images below)
 
 ## Key SAM Concepts
 
@@ -70,6 +72,20 @@ opencode/
 | Purchase Date | Mandatory | Needed for warranty and depreciation |
 | Cost | Optional | Useful for budgeting, not required |
 | Contract Reference | Critical (if leased) | Links asset to its support contract |
+
+## View the Infographics
+
+SVG images — open in any browser or embed in Markdown/Confluence:
+
+| Diagram | Image | Mermaid Source |
+|---------|-------|----------------|
+| Asset Lifecycle | ![Asset Lifecycle](./infographics/asset-lifecycle.svg) | [`templates/sam-architecture.mmd`](../templates/sam-architecture.mmd) |
+| Data Model | ![Data Model](./infographics/data-model.svg) | [`templates/sam-architecture.mmd`](../templates/sam-architecture.mmd) |
+| Field Classification | ![Field Classification](./infographics/field-classification.svg) | — |
+| Common Mistakes | ![Common Mistakes](./infographics/common-mistakes.svg) | — |
+| Roles & Permissions | ![Roles & Permissions](./infographics/roles-permissions.svg) | — |
+
+> **Tip:** SVG files render natively in GitHub, browsers, Confluence, and most documentation tools. Right-click any image to save it.
 
 ## Next Steps
 

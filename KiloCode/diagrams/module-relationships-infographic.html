@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiceNow SAM Module Relationships - Infographic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%);
+      min-height: 100vh;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .module-card {
+      border: 2px solid #333;
+      border-radius: 12px;
+      padding: 24px;
+      background: white;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .module-card.service-now { border-color: #1565c0; border-width: 3px; background: #e3f2fd; }
+    .module-card.module { border-color: #e65100; border-width: 2px; background: #fff3e0; }
+
+    .module-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .module-company {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .module-table {
+      font-size: 0.85rem;
+      font-family: monospace;
+      background: #f5f5f5;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .module-role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1565c0;
+    }
+
+    .connections {
+      margin-top: 30px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      background: #f5f5f5;
+      padding: 30px 40px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ServiceNow SAM Module Map</h1>
+      <p>How ServiceNow SAM Modules Connect & Relate</p>
+    </div>
+
+    <div class="modules-grid">
+      <div class="module-card service-now">
+        <div class="module-name">ServiceNow Core</div>
+        <div class="module-company">Core Platform</div>
+        <div class="module-table">Table: Various</div>
+        <div class="module-role">Role: Various</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">Software Asset Management</div>
+        <div class="module-company">Software Assets & Licenses</div>
+        <div class="module-table">alm_software, alm_license</div>
+        <div class="module-role">Role: CSA, CAD, CIS-SAM</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">Hardware Asset Management</div>
+        <div class="module-company">Hardware Assets & CMDB</div>
+        <div class="module-table">alm_hardware, alm_asset, cmdb_ci</div>
+        <div class="module-role">Role: sam_asset_manager</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">Procurement Management</div>
+        <div class="module-company">Purchasing & Orders</div>
+        <div class="module-table">pm_purchase_order, pm_line_item</div>
+        <div class="module-role">Role: sn_sam.admin</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">Contract Management</div>
+        <div class="module-company">Contracts & Renewals</div>
+        <div class="module-table">pm_contract</div>
+        <div class="module-role">Role: contract_manager</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">License Management</div>
+        <div class="module-company">Entitlements & Compliance</div>
+        <div class="module-table">alm_license, alm_license_model</div>
+        <div class="module-role">Role: sam_license_manager</div>
+      </div>
+
+      <div class="module-card module">
+        <div class="module-name">Platform Analytics</div>
+        <div class="module-company">Reporting & Dashboards</div>
+        <div class="module-table">Emmetrics, Emetric</div>
+        <div class="module-role">Role: pa_admin</div>
+      </div>
+    </div>
+
+    <div class="connections">
+      <p>All modules connect to ServiceNow CMDB through shared tables and update sets.</p>
+    </div>
+
+    <div class="footer">
+      <p>ServiceNow SAM Module Relationships</p>
+      <p>Generated by Kilo on 2026-11-04 | github.com/eltonaguiar/ServiceNow_Learning_SAM</p>
+    </div>
+  </div>
+</body>
+</html>
