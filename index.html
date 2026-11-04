@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceNow SAM track — from prerequisites to an auditable licence position</title>
+<meta name="description" content="Applied Software Asset Management: three hard readiness gates, a nine-step build order, field guidance, and a lab that produces one defensible compliance number.">
+<style>
+  :root { --bg:#0b1120; --panel:#111c33; --ink:#e5ecf7; --muted:#94a3b8; --line:#1f2c47;
+          --accent:#f472b6; --accent2:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  a { color:var(--accent2); }
+  header { padding:56px 24px 30px; border-bottom:1px solid var(--line);
+           background:radial-gradient(900px 320px at 12% -20%, #3a1730 0%, transparent 70%); }
+  .wrap { max-width:1160px; margin:0 auto; }
+  .kicker { color:var(--muted); letter-spacing:.14em; text-transform:uppercase; font-size:12px; }
+  h1 { font-size:clamp(27px,3.6vw,42px); margin:10px 0 12px; line-height:1.15; }
+  .lede { color:var(--muted); max-width:72ch; margin:0 0 18px; }
+  .pill { display:inline-block; border:1px solid var(--line); border-radius:999px;
+          padding:4px 12px; margin:0 8px 8px 0; font-size:13px; color:var(--muted); }
+  .layout { display:grid; grid-template-columns:250px 1fr; gap:40px; padding:32px 24px 80px; }
+  @media (max-width:900px) { .layout { grid-template-columns:1fr; } nav.toc { position:static; } }
+  nav.toc { position:sticky; top:24px; align-self:start; border:1px solid var(--line);
+            border-radius:14px; padding:18px; background:var(--panel); }
+  nav.toc h2 { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted);
+               margin:0 0 10px; }
+  nav.toc ul { list-style:none; margin:0 0 14px; padding:0; }
+  nav.toc li { margin:6px 0; font-size:14px; }
+  h2.sec { margin:38px 0 12px; font-size:22px; padding-top:10px; }
+  h2.sec:first-of-type { margin-top:0; }
+  table { width:100%; border-collapse:collapse; margin:12px 0 6px; font-size:14px; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px;
+          padding:18px; margin:14px 0; }
+  .card h3 { margin:0 0 8px; font-size:16px; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .gate { border-left:4px solid var(--accent); }
+  .gate.fail { border-left-color:#fb7185; }
+  code { background:#0f1a2d; padding:1px 6px; border-radius:5px; font-size:13px; }
+  pre { background:#0f1a2d; border:1px solid var(--line); border-radius:10px; padding:14px;
+        overflow:auto; font-size:13px; }
+  .cta { display:inline-block; margin:6px 10px 6px 0; padding:10px 16px; border-radius:10px;
+         border:1px solid var(--accent); color:var(--ink); text-decoration:none; font-weight:600; }
+  .cta.alt { border-color:var(--accent2); }
+  footer { border-top:1px solid var(--line); padding:26px 24px 60px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">ServiceNow Learning · SAM track · agent buffy · mimo-v2.6-flash · 2026-11-04</div>
+  <h1>Software Asset Management: from prerequisites to a licence position you can defend</h1>
+  <p class="lede">Most "SAM setup" advice starts at the plugin and stops at the dashboard. This
+  track starts with the three gates that make SAM meaningful — schema, a populated CMDB, and a
+  discovery feed — then walks the nine-step build order and ends with one compliance number,
+  published honestly, with its discovery coverage attached.</p>
+  <a class="cta" href="#readiness">Check readiness</a>
+  <a class="cta alt" href="#build-order">See the build order</a>
+  <a class="cta alt" href="https://github.com/eltonaguiar/ServiceNow_Learning_SAM">GitHub repo</a>
+</div></header>
+
+<div class="wrap layout">
+  <nav class="toc">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#start">Start in five minutes</a></li>
+      <li><a href="#readiness">The three hard gates</a></li>
+      <li><a href="#build-order">Nine-step build order</a></li>
+      <li><a href="#prereqs">Prerequisites checklist</a></li>
+      <li><a href="#fields">Fields that decide the answer</a></li>
+      <li><a href="#metrics">Metrics that lie</a></li>
+      <li><a href="#lab">The lab</a></li>
+      <li><a href="#tools">Reusable tools</a></li>
+      <li><a href="#sources">Official sources</a></li>
+      <li><a href="#honesty">Verified vs not</a></li>
+    </ul>
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://github.com/eltonaguiar/ServiceNow_Learning_SAM">This repository</a></li>
+      <li><a href="https://github.com/eltonaguiar/ServiceNow_Learning">Main learning kit</a></li>
+      <li><a href="https://github.com/eltonaguiar/ServiceNow_Learning/blob/buffy-mimo-v2.6-flash-2026-11-04/docs/08-SAM-SETUP.md">Full SAM guide</a></li>
+      <li><a href="https://github.com/eltonaguiar/ServiceNow_Learning/blob/buffy-mimo-v2.6-flash-2026-11-04/labs/LAB-03-SAM-BASELINE.md">SAM lab</a></li>
+      <li><a href="https://github.com/eltonaguiar/ServiceNow_Learning_SAM/issues">Issues / corrections</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2 class="sec" id="start">Start in five minutes</h2>
+    <div class="card">
+      <ol>
+        <li>Get a free instance at <a href="https://developer.servicenow.com/dev.do">developer.servicenow.com</a>.</li>
+        <li>Run the read-only probe (<code>scripts/sn_probe.js</code> from the main kit) in
+            <em>System Definition &gt; Scripts - Background</em>.</li>
+        <li>Score the instance: <code>python3 scripts/sam_readiness.py probe.json</code>.</li>
+        <li>If it says <strong>NOT READY</strong>, the scorecard's last column is your work queue.</li>
+        <li>If it says <strong>READY</strong>, go straight to <a href="#lab">the lab</a>.</li>
+      </ol>
+    </div>
+
+    <h2 class="sec" id="readiness">The three hard gates</h2>
+    <p>Missing any of these makes every number downstream fiction — no matter how tidy the
+    configuration looks.</p>
+    <div class="grid2">
+      <div class="card gate"><h3>1 · Schema + entitlement</h3>
+        <p><code>samp_*</code> / <code>cmdb_sam_*</code> tables present. SAM Foundation and
+        SAM Professional are different products — decide which one you are implementing before
+        step one.</p></div>
+      <div class="card gate"><h3>2 · CMDB, with identification rules</h3>
+      <p>Duplicate CIs double-count installs. Configure CI identifiers <em>before</em> loading
+      data, not after the duplicates appear.</p></div>
+      <div class="card gate"><h3>3 · A discovery feed</h3>
+      <p>SCCM, Intune, Jamf, Agent Client Collector or a Service Graph Connector. Hand-typed
+      installs make an asset register, not software asset management.</p></div>
+    </div>
+    <p>The scorecard turns these into pass/warn/fail with a next action per row, and caps the
+    grade when a hard gate fails — deliberately, because a confident number built on missing
+    discovery is worse than no number.</p>
+    <pre>python3 scripts/sam_readiness.py probe.json
+# → 50/100 — NOT READY — a hard prerequisite is missing</pre>
+
+    <h2 class="sec" id="build-order">Nine-step build order</h2>
+    <table>
+      <tr><th>#</th><th>Step</th><th>Checkpoint before moving on</th></tr>
+      <tr><td>1</td><td>Install / confirm the SAM plugin</td><td>SAM menu exists, plugin active</td></tr>
+      <tr><td>2</td><td>Guided Setup, if the release ships it</td><td>Read every step before running any</td></tr>
+      <tr><td>3</td><td>Roles + a dedicated integration user</td><td>A SAM user sees the position, cannot edit schema</td></tr>
+      <tr><td>4</td><td>One discovery feed, small scope</td><td>A sampled CI has a real <code>discovery_source</code> and installs</td></tr>
+      <tr><td>5</td><td>Normalisation + content library</td><td>Top-5 titles each map to exactly one product</td></tr>
+      <tr><td>6</td><td>Entitlements from contracts/POs</td><td>Every entitlement traces to a document</td></tr>
+      <tr><td>7</td><td>Licence metrics per publisher</td><td>Platform metric matches contract wording</td></tr>
+      <tr><td>8</td><td>Reconciliation</td><td>Top 3 exceptions explainable in one sentence each</td></tr>
+      <tr><td>9</td><td>Dashboards + cadence</td><td>A named person opens it on a schedule</td></tr>
+    </table>
+    <p>Field-level detail and the ten mistakes that cost real money:
+      <a href="https://github.com/eltonaguiar/ServiceNow_Learning/blob/buffy-mimo-v2.6-flash-2026-11-04/docs/08-SAM-SETUP.md">the full SAM guide</a>.</p>
+
+    <h2 class="sec" id="prereqs">Prerequisites checklist</h2>
+    <div class="card">
+      <ul>
+        <li>Entitlement <strong>and</strong> plugin (Foundation vs Professional decided)</li>
+        <li>Asset manager, SAM admin roles, plus a non-human integration user</li>
+        <li>One working discovery feed, scoped to a pilot</li>
+        <li>CMDB identification rules configured before any load</li>
+        <li>Content library / publisher packs reachable</li>
+        <li>Licence metric decisions written down and signed by the commercial owner</li>
+        <li>Contract and purchase-order data, or a plan to obtain it</li>
+        <li>A named owner for the reconciliation output</li>
+      </ul>
+      <p>Three or more missing? The next hour belongs to prerequisites, not to forms.</p>
+    </div>
+
+    <h2 class="sec" id="fields">Fields that decide the answer</h2>
+    <table>
+      <tr><th>Object</th><th>Critical</th><th>Useful</th><th>Changes the number?</th></tr>
+      <tr><td>Entitlement</td><td>product, quantity, <strong>metric</strong>, start/end, licence type</td><td>publisher, contract link, cost</td><td>metric</td></tr>
+      <tr><td>Software install</td><td>linked CI, normalised product</td><td>version/edition, last seen, discovery source</td><td>—</td></tr>
+      <tr><td>Asset</td><td>asset tag, model, state/substate, assigned to</td><td>cost centre, PO, warranty</td><td>—</td></tr>
+      <tr><td>Contract</td><td>start/end dates, vendor</td><td>renewal owner</td><td>dates (silently expires)</td></tr>
+    </table>
+    <p>Three kinds of "required" exist: dictionary-mandatory (survives APIs and imports),
+    UI-policy-mandatory (form only) and data-policy-mandatory. Only the first is safe to rely
+    on — the probe prints your instance's dictionary view.</p>
+
+    <h2 class="sec" id="metrics">Metrics that lie</h2>
+    <table>
+      <tr><th>Metric</th><th>Use it?</th><th>Caution</th></tr>
+      <tr><td>Licence position per publisher</td><td>Yes</td><td>Publish discovery coverage % beside it</td></tr>
+      <tr><td>Installs without a normalised product</td><td><strong>Yes — best first KPI</strong></td><td>Predicts every other number</td></tr>
+      <tr><td>Renewals ≤ 90 days</td><td>Yes</td><td>Cheapest trust-builder in SAM</td></tr>
+      <tr><td>"Unlicensed installs" alone</td><td>No</td><td>Fear, not information</td></tr>
+      <tr><td>Raw install count as "usage"</td><td><strong>No</strong></td><td>Installed ≠ used</td></tr>
+    </table>
+
+    <h2 class="sec" id="lab">The lab</h2>
+    <div class="card">
+      <h3>Three titles, three licence metrics, one defensible number</h3>
+      <p>Build a compliance position for one per-device title, one per-user title and one
+      per-core title. Then change a single metric and watch the answer flip — the moment SAM
+      stops being data entry. Part 0-B covers instances with no SAM entitlement, so the
+      reasoning is learnable on a PDI.</p>
+      <a class="cta" href="https://github.com/eltonaguiar/ServiceNow_Learning/blob/buffy-mimo-v2.6-flash-2026-11-04/labs/LAB-03-SAM-BASELINE.md">Open the lab</a>
+    </div>
+
+    <h2 class="sec" id="tools">Reusable tools <span style="color:var(--muted);font-size:14px">(main repository)</span></h2>
+    <table>
+      <tr><th>Tool</th><th>Purpose</th></tr>
+      <tr><td><code>scripts/sn_probe.js</code></td><td>Read-only instance facts: tables, mandatory fields, related lists, plugins, Guided Setup, SAM tables</td></tr>
+      <tr><td><code>scripts/sam_readiness.py</code></td><td>Ten-check readiness score with a next action per row</td></tr>
+      <tr><td><code>scripts/sn_sheet.py</code></td><td>Probe JSON → study sheet with a gap list</td></tr>
+      <tr><td><code>scripts/sn_learn.py</code></td><td>Timeboxed study briefs, plans and quizzes per module</td></tr>
+    </table>
+    <p>Tools are kept in one place on purpose: no forks that drift.</p>
+
+    <h2 class="sec" id="sources">Official sources</h2>
+    <table>
+      <tr><th>Source</th><th>Used for</th></tr>
+      <tr><td><a href="https://www.servicenow.com/docs/search?q=software+asset+management">Product documentation</a></td><td>Configuration, licence metrics, reconciliation</td></tr>
+      <tr><td><a href="https://learning.servicenow.com/lxp">Now Learning / Now Create</a></td><td>Success Pack for SAM/ITAM (search "Now Create"); CIS-ITAM path</td></tr>
+      <tr><td><a href="https://developer.servicenow.com/dev.do">Developer portal</a></td><td>PDI, API Explorer</td></tr>
+      <tr><td><a href="https://store.servicenow.com/store">ServiceNow Store</a></td><td>Which SAM content and connectors your entitlement includes</td></tr>
+      <tr><td><a href="https://support.servicenow.com/now">Now Support / KB</a></td><td>Reconciliation and normalisation errors</td></tr>
+      <tr><td><a href="https://community.servicenow.com/">Community</a></td><td>Audit gotchas from practitioners (verify first)</td></tr>
+    </table>
+    <p>Read manually, summarise in your own words, cite the URL. Nothing here mirrors
+    ServiceNow content.</p>
+
+    <h2 class="sec" id="honesty">Verified vs not verified</h2>
+    <p><strong>Verified:</strong> repository structure, tooling behaviour against a fixture
+    probe, and every official URL's reachability (2026-11-04).
+    <strong>Not verified:</strong> behaviour inside a licensed SAM instance — none was
+    available, so release-dependent claims are marked <em>verify</em> and the probe resolves
+    them against your instance.</p>
+  </main>
+</div>
+
+<footer><div class="wrap">
+  ServiceNow Learning — SAM track · agent <strong>buffy</strong> (mimo-v2.6-flash) · 2026-11-04 ·
+  <a href="https://github.com/eltonaguiar/ServiceNow_Learning_SAM">github.com/eltonaguiar/ServiceNow_Learning_SAM</a>
+  · main kit at <a href="https://github.com/eltonaguiar/ServiceNow_Learning">ServiceNow_Learning</a>
+</div></footer>
+</body>
+</html>
