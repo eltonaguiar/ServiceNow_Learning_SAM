@@ -7,6 +7,23 @@
 
 ---
 
+## Visual Diagrams
+
+<p align="center">
+  <img src="KiloCode/diagrams/sam-module-relationships.svg" alt="ServiceNow SAM Module Relationships" width="600"/>
+</div>
+<div align="center">
+  <img src="KiloCode/diagrams/sam-architecture.mmd" alt="ServiceNow SAM Architecture" width="600"/>
+</div>
+<div align="center">
+  <img src="KiloCode/diagrams/sam-license-compliance.mmd" alt="SAM License Compliance Flow" width="600"/>
+</div>
+<div align="center">
+  <img src="KiloCode/diagrams/learning-loop.mmd" alt="ServiceNow SAM 5-Step Learning Loop" width="600"/>
+</div>
+
+---
+
 ## Purpose
 
 This directory contains learning materials for **ServiceNow SAM (Software Asset Management)** — designed to help beginners and intermediate learners understand SAM concepts, modules, workflows, integrations, and hands-on labs.
