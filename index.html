@@ -81,6 +81,7 @@
       <li><a href="#start">Start in five minutes</a></li>
       <li><a href="#courses">Courses, in order</a></li>
       <li><a href="#readiness">The three hard gates</a></li>
+      <li><a href="#identity">Identification vs normalisation</a></li>
       <li><a href="#build-order">Nine-step build order</a></li>
       <li><a href="#prereqs">Prerequisites checklist</a></li>
       <li><a href="#fields">Fields that decide the answer</a></li>
@@ -140,11 +141,32 @@
         step one.</p></div>
       <div class="card gate"><h3>2 · CMDB, with identification rules</h3>
       <p>Duplicate CIs double-count installs. Configure CI identifiers <em>before</em> loading
-      data, not after the duplicates appear.</p></div>
+      data. These are a <strong>CMDB/IRE</strong> mechanism, not SAM configuration — answered in
+      full under <a href="#identity">identification rules vs normalisation</a>.</p></div>
       <div class="card gate"><h3>3 · A discovery feed</h3>
       <p>SCCM, Intune, Jamf, Agent Client Collector or a Service Graph Connector. Hand-typed
       installs make an asset register, not software asset management.</p></div>
     </div>
+    <h2 class="sec" id="identity">Identification rules vs normalisation — which applies where</h2>
+    <p>This is the most misattributed control in SAM, and the answer is: <strong>HAM yes, SAM
+    indirectly</strong>.</p>
+    <table>
+      <tr><th>Mechanism</th><th>Answers</th><th>Configured in</th><th>Applies to</th></tr>
+      <tr><td><strong>CI identification rules</strong> (IRE)</td><td>Is this CI new, or the one I already have?</td><td>CI Class Manager / CI Identifiers</td><td><strong>CMDB</strong> — all CIs incl. every server and laptop; this is what HAM relies on</td></tr>
+      <tr><td><strong>Asset↔CI reconciliation</strong></td><td>Which asset record is this CI?</td><td>HAM asset sync on serial number</td><td>Hardware assets ↔ hardware CIs</td></tr>
+      <tr><td><strong>Normalisation / recognition</strong></td><td>Are these two software titles the same product?</td><td>SAM content library / publisher packs</td><td><strong>SAM</strong> — its real identity problem</td></tr>
+      <tr><td><strong>Licence metric</strong></td><td>Per user, device or core?</td><td>Entitlement record</td><td><strong>SAM</strong> — commercial decision</td></tr>
+      <tr><td><strong>Licence reconciliation</strong></td><td>Rights vs installs → compliance</td><td>SAM reconciliation</td><td><strong>SAM</strong> — the number you defend</td></tr>
+    </table>
+    <p><strong>HAM:</strong> directly — one laptop seen by SCCM, Intune and a manual import must
+    resolve to one CI, usually on serial number. <strong>SAM:</strong> there are no identification
+    rules for software products (you normalise instead), but every install record hangs off a CI,
+    so duplicate CIs duplicate installs and inflate the gap. Fix computer-class identification
+    <em>before</em> reconciling.</p>
+    <p>Rule of thumb: deduplicating <em>a machine</em> → CMDB/IRE. Deduplicating <em>a software
+    title</em> → normalisation in SAM. Deduplicating <em>a quantity of rights</em> → a licence
+    metric, which is a commercial decision.</p>
+
     <p>The scorecard turns these into pass/warn/fail with a next action per row, and caps the
     grade when a hard gate fails — deliberately, because a confident number built on missing
     discovery is worse than no number.</p>
@@ -174,7 +196,7 @@
         <li>Entitlement <strong>and</strong> plugin (Foundation vs Professional decided)</li>
         <li>Asset manager, SAM admin roles, plus a non-human integration user</li>
         <li>One working discovery feed, scoped to a pilot</li>
-        <li>CMDB identification rules configured before any load</li>
+        <li>CMDB identification rules configured before any load — a CMDB/IRE task, not SAM</li>
         <li>Content library / publisher packs reachable</li>
         <li>Licence metric decisions written down and signed by the commercial owner</li>
         <li>Contract and purchase-order data, or a plan to obtain it</li>

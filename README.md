@@ -72,11 +72,38 @@ fiction, no matter how tidy the configuration looks:
 | Gate | Why it is hard | How the scorecard sees it |
 |---|---|---|
 | **SAM schema + entitlement** | No tables, no reconciliation. Foundation and Professional are different products | `samp_*` / `cmdb_sam_*` tables present |
-| **CMDB populated, with identification rules** | Duplicate CIs double-count installs | `cmdb_ci` row count |
+| **CMDB populated, with identification rules** | Duplicate CIs double-count installs. Note: identification rules are a **CMDB/IRE** mechanism, not SAM configuration — see below | `cmdb_ci` row count |
 | **A discovery / connector feed** | Hand-typed installs are an asset register, not SAM | Discovery / Service Graph plugin |
 
 PDIs usually lack the SAM entitlement. The lab's Part 0-B teaches the same reasoning with
 `alm_asset` + product models only, so the concept survives the missing plugin.
+
+---
+
+## Identification rules: CMDB, not SAM (the question everyone asks)
+
+They are the most misattributed control in this track, so keep the layers apart:
+
+| Mechanism | Answers | Configured in | Applies to |
+|---|---|---|---|
+| **CI identification rules** (IRE) | Is this CI new, or the one I already have? | CI Class Manager / CI Identifiers, per CI class | **CMDB** — all CIs, including every server and laptop. This is what **HAM** relies on |
+| **Asset↔CI reconciliation** (HAM) | Which asset record is this CI? | HAM asset sync on **serial number** | Hardware assets ↔ CIs — separate from identification |
+| **Normalisation / recognition** | Are these two software titles the same product? | SAM ~ content library / publisher packs | **SAM** — SAM's real "identification" problem |
+| **Licence metric** | Per user, device or core? | Entitlement | **SAM** — commercial decision |
+| **Licence reconciliation** | Rights vs installs → compliance | SAM reconciliation | **SAM** — the number you defend |
+
+**So: HAM yes, SAM indirectly.**
+
+- **HAM:** directly. One laptop seen by SCCM, Intune and a manual import must resolve to one
+  CI (serial number is the usual anchor). Bad rules = three laptops, three assets, no trust.
+- **SAM:** no identification rules exist for software products — you *normalise* instead. But
+  every install record hangs off a CI, so duplicate CIs duplicate installs and inflate the gap.
+  Fix computer-class identification **before** you reconcile, or you will spend a week
+  explaining a shortage that is really a duplicate.
+
+> Rule of thumb: deduplicating *a machine* → CMDB/IRE. Deduplicating *a software title* →
+> normalisation in SAM. Deduplicating *a quantity of rights* → a licence metric, and that is a
+> commercial decision.
 
 ---
 
