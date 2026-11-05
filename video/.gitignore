@@ -1,0 +1,7 @@
+# Intermediate build artifacts — regenerate with `python3 video/build_sam_video.py --voice`
+out/segments/
+out/concat.txt
+
+# Slide PNGs are committed intentionally: they are the video's source frames,
+# they diff in a review, and they prove what the MP4 was built from.
+# !assets/
