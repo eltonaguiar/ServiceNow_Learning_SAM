@@ -1,8 +1,8 @@
-name: Deploy GitHub Pages
+name: Build and Deploy ServiceNow SAM Learning Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ kilo-2026-11-05-sam-modules ]
   workflow_dispatch:
 
 permissions:
@@ -11,29 +11,33 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      # jekyll-build-pages renders the markdown guides to HTML and rewrites relative
-      # .md links, which is what the landing page's .html links rely on.
-      - uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - uses: actions/upload-pages-artifact@v3
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Copy site files
+        run: |
+          mkdir -p _site
+          cp -r KiloCode/diagrams/*.html _site/
+          cp KiloCode/README.md _site/index.html 2>/dev/null || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

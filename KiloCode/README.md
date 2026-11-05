@@ -1,89 +1,154 @@
-# KiloCode — ServiceNow SAM Learning Materials
+# ServiceNow Learning - ServiceNow Module Guides
 
-**Agent:** Kilo  
-**Date:** 2026-11-04  
+**Author:** Kilo AI Agent  
+**Date:** 2026-11-05  
 **Repository:** https://github.com/eltonaguiar/ServiceNow_Learning_SAM  
-**Branch:** kilo-2026-11-04-sam-learning-materials  
+**Branch:** kilo-2026-11-05-sam-modules  
+**Purpose:** Comprehensive learning materials for ServiceNow Service Management (SAM) modules
 
 ---
 
-## Purpose
+## 📚 Overview
 
-This directory contains learning materials for **ServiceNow SAM (Software Asset Management)** — designed to help beginners and intermediate learners understand SAM concepts, modules, workflows, integrations, and hands-on labs.
+This repository contains comprehensive learning materials for ServiceNow Service Management (SAM) modules. Each module includes detailed documentation covering:
 
-All materials are structured around the same 5-step rapid learning loop used across the ServiceNow_Learning project family.
+- **Module Overview** - Purpose, value proposition, and key concepts
+- **Table Hierarchy** - All related tables and their relationships
+- **Out-of-Box Features** - Built-in features and capabilities
+- **Code Examples** - Server scripts, Business Rules, and client scripts
+- **Integration Patterns** - Integration with other ServiceNow modules and external systems
+- **Getting Started** - Step-by-step implementation guide
 
 ---
 
-## Directory Structure
+## 📋 Available Modules
+
+| Module | Description | Key Areas | Status |
+|--------|-------------|-----------|--------|
+| **ServiceNow CSA/CAD** | ServiceNow Certified System Administrator & Certified Application Developer | Platform fundamentals, scripting, configuration | ✅ Complete |
+| **ServiceNow IT Service Management (ITSM)** | Incident, Problem, Change, CMDB, Performance Analytics | Incident, Problem, Change, CMDB, Service Catalog, SLAs | ✅ Complete |
+| **ServiceNow ServiceNow Asset Management (SAM)** | Hardware Asset Management, Software Asset Management | Hardware assets, software licenses, CMDB, integrations | ✅ Complete |
+| **ServiceNow ServiceNow Technical Operations Management (TSOM)** | Transaction Service Operations Management | Transaction monitoring, ITOM integration, performance analytics | ✅ Complete |
+| **ServiceNow Customer Service Management (CSM)** | Customer Service Management | Case management, knowledge management, customer portals | ✅ Complete |
+| **ServiceNow Field Service Management (FSM)** | Field Service Management | Work orders, field technicians, scheduling, parts inventory | ✅ Complete |
+| **ServiceNow Sales CRM** | Sales Force Automation | Lead management, opportunity management, quotes, contracts | ✅ Complete |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- ServiceNow instance (Developer Instance recommended)
+- Appropriate roles (admin, itsm_admin, sn_sam.admin, etc.)
+- Basic understanding of IT service management concepts
+
+### Getting Started
+
+1. **Choose a module** from the table above
+2. **Read the module documentation** in the corresponding module folder
+3. **Complete the hands-on labs** in the labs directory
+4. **Practice with the code examples** in your ServiceNow instance
+5. **Review the certification path** for certification preparation
+
+---
+
+## 📁 Repository Structure
 
 ```
 KiloCode/
-├── README.md                              # This file
-├── methodology/rapid-learning-methodology.md   # Core 5-step learning loop
-├── modules/servicenow-sam-module-framework.md   # How to learn SAM modules
-├── concepts/servicenow-sam-concepts-eli5.md     # ELI5 SAM concepts glossary
-├── success-packs/sam-success-pack-prerequisites.md # SAM Success Pack pre-requisites
-├── navigation/sam-breadcrumbs-cheatsheet.md     # SAM navigation cheatsheet
-├── common-mistakes/sam-mistakes-to-avoid.md     # Common SAM mistakes & fixes
-├── fields/sam-mandatory-vs-critical-fields.md   # Mandatory vs Critical vs Optional SAM fields
-├── out-of-box/sam-out-of-box-workflows-integrations.md # OOB SAM workflows, integrations, metrics
-├── labs/rest-message-integration/               # Lab: REST Message integration for SAM
-│   └── README.md
-├── labs/remote-table/                           # Lab: Remote Table for SAM data
-│   └── README.md
-├── scripts/
-│   ├── rapid-learning-checklist.md              # Quick-start checklist
-│   ├── lab-setup-template.md                    # Lab setup template
-│   └── concept-summary-template.md              # Concept summary template
-└── meta/
-    ├── AGENT.md                                 # Who built this (Kilo) and when
-    └── CHANGELOG.md                             # Changelog
+├── README.md                          # This file
+├── methodology/                       # Learning methodology and approach
+│   └── rapid-learning-methodology.md
+├── modules/                           # Module-specific documentation
+│   ├── servicenow-itsm-module.md
+│   ├── servicenow-sam-module-framework.md
+│   ├── servicenow-csm-module.md
+│   ├── servicenow-fsm-module.md
+│   ├── servicenow-sales-crm-module.md
+│   └── servicenow-tsom-module.md
+├── concepts/                          # Concept explanations (ELI5)
+│   └── servicenow-sam-concepts-eli5.md
+├── navigation/                        # Navigation cheatsheets
+│   └── sam-breadcrumbs-cheatsheet.md
+├── fields/                            # Field references
+│   └── sam-mandatory-vs-critical-fields.md
+├── success-packs/                     # Success pack documentation
+│   └── sam-success-pack-prerequisites.md
+├── labs/                              # Hands-on labs
+│   ├── rest-message-integration/
+│   └── remote-table/
+├── scripts/                           # Script templates and examples
+│   ├── rapid-learning-checklist.md
+│   ├── lab-setup-template.md
+│   └── concept-summary-template.md
+├── meta/                              # Agent and project metadata
+│   ├── AGENT.md
+│   └── CHANGELOG.md
+└── diagrams/                          # Diagrams and visualizations
+    ├── servicenow-architecture.mmd
+    ├── sam-architecture.mmd
+    ├── sam-license-compliance.mmd
+    ├── learning-loop.mmd
+    ├── sam-module-relationships.mmd
+    ├── sam-decision-tree.mmd
+    ├── sam-license-compliance-tree.mmd
+    ├── sam-module-relationships.svg
+    ├── sam-asset-lifecycle.svg
+    ├── learning-loop.svg
+    ├── learning-loop-infographic.html
+    ├── module-relationships-infographic.html
+    └── certification-roadmap.html
 ```
 
 ---
 
-## The 5-Step Rapid Learning Loop
+## 🎓 Learning Path
 
-Every SAM module or concept follows the same 5-step loop:
+### Beginner Path
+1. Start with **ServiceNow CSA/CAD** fundamentals
+2. Complete **ITSMP** (IT Service Management) module
+3. Complete hands-on labs
+4. Prepare for CSA/CAD certification
 
-| Step | Name | What You Do | Output |
-|------|------|-------------|--------|
-| 1 | **Orient** | Read the ELI5 glossary + breadcrumbs for the SAM module. Know where it lives in the UI. | Mental map of where things are |
-| 2 | **Configure** | Turn the module on (if needed). Set roles. Create a test record. | Working instance with module active |
-| 3 | **Build** | Do the lab: create an asset, run a reconciliation, create a PO, etc. | Tangible artifact (asset record, PO, contract) |
-| 4 | **Verify** | Confirm the artifact works end-to-end. Check related lists, logs, dashboards. | Evidence it works |
-| 5 | **Teach Back** | Write a 1-paragraph summary using `scripts/concept-summary-template.md`. | You can explain it simply |
+### Intermediate Path
+1. Complete CSA/CAD certifications
+2. Learn **ServiceNow SAM** (Hardware Asset Management)
+3. Learn **ServiceNow CSM** (Customer Service Management)
+4. Learn **ServiceNow FSM** (Field Service Management)
+5. Complete hands-on labs for each module
 
-**Time target:** Complete Steps 1–5 in under 2 hours per module.
-
----
-
-## How to Use This Repo
-
-1. **New to ServiceNow SAM?** Start with `docs/concepts/servicenow-sam-concepts-eli5.md` (ELI5 glossary).
-2. **Learning a specific SAM module?** Go to `docs/modules/servicenow-sam-module-framework.md`, pick your module, follow the 5-step loop.
-3. **Building an integration?** Start at `labs/rest-message-integration/` or `labs/remote-table/`.
-4. **Need a quick reference?** Use `docs/navigation/sam-breadcrumbs-cheatsheet.md` and `scripts/rapid-learning-checklist.md`.
-5. **Stuck?** Check `docs/common-mistakes/sam-mistakes-to-avoid.md` first.
+### Advanced Path
+1. Complete all intermediate certifications
+2. Learn **ServiceNow TSOM** (Technical Operations Management)
+3. Learn **ServiceNow Sales CRM**
+4. Build custom integrations and workflows
+5. Prepare for CIS certifications
 
 ---
 
-## Core Principles
+## 🛠️ Tools and Scripts
 
-1. **No configuration without a purpose.** Every field you touch must map to a business need (e.g., software license compliance, hardware asset tracking).
-2. **Evidence over memory.** If you can't show it in a screenshot or list view, you haven't learned it.
-3. **Break things safely.** Use a developer instance. Never practice on production.
-4. **Certifications are a side effect, not the goal.** CSA/CAD/SAM certifications come from doing, not memorizing.
-
----
-
-## Next Steps
-
-- **Beginner:** Read `docs/concepts/servicenow-sam-concepts-eli5.md`, then `docs/methodology/rapid-learning-methodology.md`.
-- **Intermediate:** Pick a SAM module from `docs/modules/servicenow-sam-module-framework.md` and run the 5-step loop.
-- **Advanced:** Build a custom lab combining REST Message + Remote Table + Flow Designer for SAM asset lifecycle management.
+| Tool | Purpose |
+|------|---------|
+| `rapid-learning-checklist.md` | Quick-start checklist for learning any module |
+| `lab-setup-template.md` | Reusable lab setup template |
+| `concept-summary-template.md` | Template for summarizing concepts |
 
 ---
 
-*Generated by Kilo on 2026-11-04. Part of the ServiceNow_Learning_SAM repository at github.com/eltonaguiar/ServiceNow_Learning_SAM.*
+## 📊 Certification Path
+
+1. **ServiceNow Certified System Administrator (CSA)** - Foundation
+2. **ServiceNow Certified Application Developer (CAD)** - Application development
+3. **Certified Implementation Specialist (CIS)** - Specialized implementation (CIS-SAM, CIS-ITSM, CIS-CSM, CIS-FSM, CIS-HAM)
+4. **Certified Technical Architect (CTA)** - Architecture and design
+
+---
+
+## 📧 Contact
+
+Generated by Kilo AI Agent on 2026-11-05. Part of the ServiceNow_Learning_SAM repository.
+
+---
+
+*For issues or contributions, please open an issue on GitHub.*
