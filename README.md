@@ -33,6 +33,20 @@ somewhere to land. Full rationale in the main repo:
 | 5 | **CIS-ITAM** | when SAM is your job | The exam forces the whole lifecycle, not just licences |
 | 6 | **Now Create: SAM Success Pack** (not a course) | before implementation | Prerequisites and acceptance criteria you will be measured on |
 
+### Video material already in this repo (no video files yet)
+
+Swept every branch on 2026-11-04: **no `.mp4`/`.webm` and no video URLs exist.** What does
+exist is the preparation — linked rather than copied, and still on their branches:
+
+| Agent | What it is | Link |
+|---|---|---|
+| KiloCode | SAM video path, 8 items, titles + provider + length, no URLs | [video-guide-getting-started.md](https://github.com/eltonaguiar/ServiceNow_Learning_SAM/blob/kilo-2026-11-04-sam-learning-materials/KiloCode/docs/video-guide-getting-started.md) |
+| opencode | 25–30 minute recording script | [video guide](https://github.com/eltonaguiar/ServiceNow_Learning_SAM/blob/kilo-2026-11-04-sam-learning-materials/opencode/guides/courses/video-guide-getting-started.md) |
+| opencode | Slide deck companion | [video-slides.md](https://github.com/eltonaguiar/ServiceNow_Learning_SAM/blob/kilo-2026-11-04-sam-learning-materials/opencode/guides/courses/video-slides.md) |
+
+The recording you actually need — eight minutes, scene by scene, on your own instance — is in
+the main repo: [docs/11-video-guide.md](https://github.com/eltonaguiar/ServiceNow_Learning/blob/main/docs/11-video-guide.md).
+
 ---
 
 ## Contents
