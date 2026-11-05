@@ -1,0 +1,65 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #e1f5fe; stroke: #01579b; stroke-width: 2; rx: 8; ry: 8; }
+      .box-critical { fill: #ffcdd2; stroke: #b71c1c; stroke-width: 2; rx: 8; ry: 8; }
+      .box-mandatory { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; rx: 8; ry: 8; }
+      .box-optional { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 8; ry: 8; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #01579b; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="title">ServiceNow SAM — Asset Lifecycle</text>
+
+  <!-- Lifecycle stages -->
+  <rect x="50" y="80" width="140" height="60" class="box" />
+  <text x="120" y="110" text-anchor="middle" class="text">1. Request</text>
+  <text x="120" y="128" text-anchor="middle" class="text">Need an asset</text>
+
+  <rect x="230" y="80" width="140" height="60" class="box" />
+  <text x="300" y="110" text-anchor="middle" class="text">2. Procure</text>
+  <text x="300" y="128" text-anchor="middle" class="text">Buy from vendor</text>
+
+  <rect x="410" y="80" width="140" height="60" class="box" />
+  <text x="480" y="110" text-anchor="middle" class="text">3. Receive</text>
+  <text x="480" y="128" text-anchor="middle" class="text">It arrives</text>
+
+  <rect x="590" y="80" width="140" height="60" class="box" />
+  <text x="660" y="110" text-anchor="middle" class="text">4. Assign</text>
+  <text x="660" y="128" text-anchor="middle" class="text">Give to employee</text>
+
+  <rect x="300" y="180" width="140" height="60" class="box-critical" />
+  <text x="370" y="210" text-anchor="middle" class="text">5. In Repair</text>
+  <text x="370" y="228" text-anchor="middle" class="text">Fix when broken</text>
+
+  <rect x="50" y="280" width="140" height="60" class="box-mandatory" />
+  <text x="120" y="310" text-anchor="middle" class="text">6. Retire</text>
+  <text x="120" y="328" text-anchor="middle" class="text">Replace &amp; recycle</text>
+
+  <!-- Arrows -->
+  <line x1="190" y1="110" x2="230" y2="110" class="arrow" />
+  <line x1="370" y1="110" x2="410" y2="110" class="arrow" />
+  <line x1="550" y1="110" x2="590" y2="110" class="arrow" />
+  <line x1="480" y1="140" x2="480" y2="180" class="arrow" />
+  <line x1="370" y1="240" x2="370" y2="280" class="arrow" />
+  <line x1="190" y1="310" x2="50" y2="310" class="arrow" />
+
+  <!-- Legend -->
+  <rect x="50" y="380" width="120" height="30" class="box" />
+  <text x="110" y="398" text-anchor="middle" class="label">Standard step</text>
+  <rect x="200" y="380" width="140" height="30" class="box-critical" />
+  <text x="270" y="398" text-anchor="middle" class="label">Critical field</text>
+  <rect x="370" y="380" width="160" height="30" class="box-mandatory" />
+  <text x="450" y="398" text-anchor="middle" class="label">Mandatory field</text>
+  <rect x="560" y="380" width="140" height="30" class="box-optional" />
+  <text x="630" y="398" text-anchor="middle" class="label">Optional field</text>
+
+  <text x="400" y="570" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>

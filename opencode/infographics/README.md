@@ -8,7 +8,8 @@ This folder contains SVG infographics for ServiceNow SAM (Service Asset Manageme
 |------|-------------|
 | `asset-lifecycle.svg` | Complete asset lifecycle from Request to Retire |
 | `data-model.svg` | Core SAM tables and relationships (alm_asset, alm_vendor, alm_contract, alm_asset_category) |
-| `field-classification.svg` | Mandatory vs Critical vs Optional field matrix |
+<<<<<<< HEAD
+| `field-classification.svg` | Mandatory vs Critical vs Optional field matrix with examples |
 | `common-mistakes.svg` | 6 common SAM mistakes and how to fix them |
 | `roles-permissions.svg` | SAM roles (admin, itil, asset) and what each can do |
 | `foundation-data.svg` | Foundation data setup order (Companies → Locations → Categories → States → Asset Record) |

@@ -1,0 +1,39 @@
+# ServiceNow SAM Module Relationship Diagram
+
+```mermaid
+graph TD
+    %% SAM Module Relationships
+    subgraph "ServiceNow SAM Modules"
+        A[SAM Core] --> B[Software Asset Mgmt]
+        A --> C[Hardware Asset Mgmt]
+        A --> D[Procurement Mgmt]
+        A --> E[Contract Management]
+        A --> F[License Management]
+        
+        B --> G[Software Records]
+        B --> H[License Records]
+        
+        C --> I[Hardware Assets]
+        C --> J[CMDB CIs]
+        
+        D --> J[purchase orders]
+        D --> K[vendors]
+        
+        E --> L[contracts]
+        E --> M[contract renewals]
+        
+        F --> G[license models]
+        F --> H[entitlements]
+        
+        G --> H[allocations]
+        H --> I[deployments]
+        I --> J[CMDB]
+    end
+
+    style A fill:#e8f5e9,stroke:#1b5e20,stroke-width:3px
+    style B fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style C fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style E fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style F fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+```

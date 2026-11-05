@@ -1,0 +1,69 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .role { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 8; ry: 8; }
+      .role-admin { fill: #ffcdd2; stroke: #b71c1c; stroke-width: 2; rx: 8; ry: 8; }
+      .role-itil { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; rx: 8; ry: 8; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .marker { fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1565c0; }
+      .role-name { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .role-desc { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .can-do { font-family: Arial, sans-serif; font-size: 11px; fill: #2e7d32; }
+      .cant-do { font-family: Arial, sans-serif; font-size: 11px; fill: #b71c1c; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <text x="400" y="30" text-anchor="middle" class="title">SAM — Roles &amp; Permissions</text>
+
+  <!-- Admin -->
+  <rect x="50" y="80" width="220" height="140" class="role-admin" />
+  <text x="160" y="105" text-anchor="middle" class="role-name">admin</text>
+  <text x="160" y="125" text-anchor="middle" class="role-desc">Full system access</text>
+  <text x="65" y="145" class="can-do">✓ Create/change everything</text>
+  <text x="65" y="160" class="can-do">✓ Configure SAM module</text>
+  <text x="65" y="175" class="cant-do">✗ Use carefully — powerful</text>
+
+  <!-- ITIL -->
+  <rect x="300" y="80" width="220" height="140" class="role-itil" />
+  <text x="410" y="105" text-anchor="middle" class="role-name">itil</text>
+  <text x="410" y="125" text-anchor="middle" class="role-desc">IT service management</text>
+  <text x="315" y="145" class="can-do">✓ Work with incidents</text>
+  <text x="315" y="160" class="can-do">✓ Manage assets</text>
+  <text x="315" y="175" class="cant-do">✗ No module configuration</text>
+
+  <!-- Asset -->
+  <rect x="550" y="80" width="220" height="140" class="role" />
+  <text x="660" y="105" text-anchor="middle" class="role-name">asset</text>
+  <text x="660" y="125" text-anchor="middle" class="role-desc">Asset management</text>
+  <text x="565" y="145" class="can-do">✓ Create/edit assets</text>
+  <text x="565" y="160" class="can-do">✓ Manage inventory</text>
+  <text x="565" y="175" class="cant-do">✗ No system config</text>
+
+  <!-- Arrows showing hierarchy -->
+  <line x1="160" y1="220" x2="160" y2="260" class="arrow" />
+  <text x="155" y="255" text-anchor="middle" class="label">includes</text>
+
+  <line x1="410" y1="220" x2="410" y2="260" class="arrow" />
+  <text x="405" y="255" text-anchor="middle" class="label">includes</text>
+
+  <!-- Combined -->
+  <rect x="275" y="280" width="250" height="80" class="role" />
+  <text x="400" y="305" text-anchor="middle" class="role-name">itil + asset</text>
+  <text x="400" y="325" text-anchor="middle" class="role-desc">Typical SAM administrator</text>
+  <text x="290" y="345" class="can-do">✓ Full SAM asset management</text>
+
+  <!-- How to check your role -->
+  <rect x="50" y="390" width="700" height="120" class="role" />
+  <text x="400" y="415" text-anchor="middle" class="role-name">How to check your role</text>
+  <text x="65" y="435" class="label">1. Click your user icon (top right) → My Profile</text>
+  <text x="65" y="452" class="label">2. Open User → Roles related list</text>
+  <text x="65" y="469" class="label">3. Look for: admin, itil, asset</text>
+  <text x="400" y="487" text-anchor="middle" class="label">Can't see something? You're probably missing a role — ask your admin.</text>
+
+  <text x="400" y="570" text-anchor="middle" class="label">ServiceNow SAM — opencode • 2026-11-04</text>
+</svg>
